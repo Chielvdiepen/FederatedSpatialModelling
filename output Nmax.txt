@@ -1,0 +1,640 @@
+------------------------------------------------------------------------------------------------
+Node uuid=A:(0, 0, 0) [:] Surrounding Nodes= G, C, B, D, H, E, F, Edgelist= (A,G,2.915), (A,C,3.000), (A,B,3.000), (A,D,4.243), (A,H,5.148), (A,E,6.000), (A,F,6.708)
+
+TriangleList:
+Triangle A|B|E: Area= 0.000, Edges= (A,B,3.000), (A,E,6.000), (B,E,3.000), Angles=(A,0.000), Altitude=(x=(A,3.000), H=(A,0.000))
+Triangle A|C|G: Area= 3.750, Edges= (A,G,2.915), (A,C,3.000), (G,C,2.915), Angles=(A,59.036), Altitude=(x=(A,1.372), H=(A,2.572))
+Triangle A|B|G: Area= 3.750, Edges= (A,G,2.915), (A,B,3.000), (G,B,2.915), Angles=(A,59.036), Altitude=(x=(A,1.372), H=(A,2.572))
+Triangle A|G|H: Area= 3.750, Edges= (A,G,2.915), (A,H,5.148), (G,H,3.000), Angles=(A,29.982), Altitude=(x=(A,1.500), H=(A,2.500))
+Triangle A|B|H: Area= 3.750, Edges= (A,B,3.000), (A,H,5.148), (B,H,2.915), Angles=(A,29.055), Altitude=(x=(A,1.543), H=(A,2.572))
+Triangle A|D|G: Area= 4.243, Edges= (A,G,2.915), (A,D,4.243), (G,D,2.915), Angles=(A,43.314), Altitude=(x=(A,0.171), H=(A,2.910))
+Triangle A|B|C: Area= 4.500, Edges= (A,C,3.000), (A,B,3.000), (C,B,4.243), Angles=(A,90.000), Altitude=(x=(A,2.121), H=(A,2.121))
+Triangle A|C|D: Area= 4.500, Edges= (A,C,3.000), (A,D,4.243), (C,D,3.000), Angles=(A,45.000), Altitude=(x=(A,0.000), H=(A,3.000))
+Triangle A|B|D: Area= 4.500, Edges= (A,B,3.000), (A,D,4.243), (B,D,3.000), Angles=(A,45.000), Altitude=(x=(A,0.000), H=(A,3.000))
+Triangle A|B|F: Area= 4.500, Edges= (A,B,3.000), (A,F,6.708), (B,F,4.243), Angles=(A,26.565), Altitude=(x=(A,2.121), H=(A,2.121))
+Triangle A|D|F: Area= 4.500, Edges= (A,D,4.243), (A,F,6.708), (D,F,3.000), Angles=(A,18.435), Altitude=(x=(A,3.000), H=(A,3.000))
+Triangle A|D|H: Area= 6.185, Edges= (A,D,4.243), (A,H,5.148), (D,H,2.915), Angles=(A,34.496), Altitude=(x=(A,0.000), H=(A,4.243))
+Triangle A|F|G: Area= 7.075, Edges= (A,G,2.915), (A,F,6.708), (G,F,5.148), Angles=(A,46.349), Altitude=(x=(A,0.971), H=(A,2.749))
+Triangle A|F|H: Area= 7.075, Edges= (A,H,5.148), (A,F,6.708), (H,F,2.915), Angles=(A,24.191), Altitude=(x=(A,1.715), H=(A,4.854))
+Triangle A|C|H: Area= 7.387, Edges= (A,C,3.000), (A,H,5.148), (C,H,5.148), Angles=(A,73.059), Altitude=(x=(A,0.874), H=(A,2.870))
+Triangle A|E|H: Area= 7.500, Edges= (A,H,5.148), (A,E,6.000), (H,E,2.915), Angles=(A,29.055), Altitude=(x=(A,0.171), H=(A,5.145))
+Triangle A|E|G: Area= 7.500, Edges= (A,G,2.915), (A,E,6.000), (G,E,5.148), Angles=(A,59.036), Altitude=(x=(A,0.097), H=(A,2.914))
+Triangle A|C|F: Area= 9.000, Edges= (A,C,3.000), (A,F,6.708), (C,F,6.000), Angles=(A,63.435), Altitude=(x=(A,0.000), H=(A,3.000))
+Triangle A|E|F: Area= 9.000, Edges= (A,E,6.000), (A,F,6.708), (E,F,3.000), Angles=(A,26.565), Altitude=(x=(A,0.000), H=(A,6.000))
+Triangle A|D|E: Area= 9.000, Edges= (A,D,4.243), (A,E,6.000), (D,E,4.243), Angles=(A,45.000), Altitude=(x=(A,0.000), H=(A,4.243))
+Triangle A|C|E: Area= 9.000, Edges= (A,C,3.000), (A,E,6.000), (C,E,6.708), Angles=(A,90.000), Altitude=(x=(A,1.342), H=(A,2.683))
+
+Opposite edges=(G,C,2.915), (G,B,2.915), (G,D,2.915), (B,H,2.915), (D,H,2.915), (H,E,2.915), (H,F,2.915), (G,H,3.000), (C,D,3.000), (B,D,3.000), (B,E,3.000), (D,F,3.000), (E,F,3.000), (C,B,4.243), (B,F,4.243), (D,E,4.243), (G,E,5.148), (G,F,5.148), (C,H,5.148), (C,F,6.000), (C,E,6.708) [:]
+
+Adjacent triangles of A:
+Edge ('A', 'G'):
+Triangle(A|C|G): x-coord=(G,2.915), map angle= 0.000 | xpos altitude=(C,1.372) | altitude height=(C,2.572) 
+Triangle(A|B|G): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(B,1.372) | altitude height=(B,2.572) 
+Triangle(A|G|H): x-coord=(X,0.000), map angle= 73.059 | xpos altitude=(H,1.543) | altitude height=(H,2.572) 
+Triangle(A|D|G): x-coord=(X,0.000), map angle= 45.000 | xpos altitude=(D,0.171) | altitude height=(D,2.910) 
+Triangle(A|F|G): x-coord=(X,0.000), map angle= 63.435 | xpos altitude=(F,1.715) | altitude height=(F,4.854) 
+Triangle(A|E|G): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(E,0.171) | altitude height=(E,5.145) 
+Edge ('A', 'C'):
+Triangle(A|C|G): x-coord=(C,3.000), map angle= 0.000 | xpos altitude=(G,1.500) | altitude height=(G,2.500) 
+Triangle(A|B|C): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(B,0.000) | altitude height=(B,3.000) 
+Triangle(A|C|D): x-coord=(X,0.000), map angle= 43.314 | xpos altitude=(D,0.000) | altitude height=(D,3.000) 
+Triangle(A|C|H): x-coord=(X,0.000), map angle= 29.982 | xpos altitude=(H,1.500) | altitude height=(H,4.924) 
+Triangle(A|C|F): x-coord=(X,0.000), map angle= 46.349 | xpos altitude=(F,0.000) | altitude height=(F,6.000) 
+Triangle(A|C|E): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(E,0.000) | altitude height=(E,6.000) 
+Edge ('A', 'B'):
+Triangle(A|B|E): x-coord=(B,3.000), map angle= 0.000 | xpos altitude=(E,3.000) | altitude height=(E,0.000) 
+Triangle(A|B|G): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(G,1.500) | altitude height=(G,2.500) 
+Triangle(A|B|H): x-coord=(X,0.000), map angle= 29.055 | xpos altitude=(H,1.500) | altitude height=(H,2.500) 
+Triangle(A|B|C): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(C,0.000) | altitude height=(C,3.000) 
+Triangle(A|B|D): x-coord=(X,0.000), map angle= 45.000 | xpos altitude=(D,0.000) | altitude height=(D,3.000) 
+Triangle(A|B|F): x-coord=(X,0.000), map angle= 26.565 | xpos altitude=(F,3.000) | altitude height=(F,3.000) 
+Edge ('A', 'D'):
+Triangle(A|D|G): x-coord=(D,4.243), map angle= 0.000 | xpos altitude=(G,2.121) | altitude height=(G,2.000) 
+Triangle(A|C|D): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(C,2.121) | altitude height=(C,2.121) 
+Triangle(A|B|D): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(B,2.121) | altitude height=(B,2.121) 
+Triangle(A|D|F): x-coord=(X,0.000), map angle= 46.349 | xpos altitude=(F,2.121) | altitude height=(F,2.121) 
+Triangle(A|D|H): x-coord=(X,0.000), map angle= 29.982 | xpos altitude=(H,0.000) | altitude height=(H,2.915) 
+Triangle(A|D|E): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(E,0.000) | altitude height=(E,4.243) 
+Edge ('A', 'H'):
+Triangle(A|G|H): x-coord=(H,5.148), map angle= 0.000 | xpos altitude=(G,2.525) | altitude height=(G,1.457) 
+Triangle(A|B|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(B,2.525) | altitude height=(B,1.457) 
+Triangle(A|D|H): x-coord=(X,0.000), map angle= 43.314 | xpos altitude=(D,1.651) | altitude height=(D,2.403) 
+Triangle(A|F|H): x-coord=(X,0.000), map angle= 46.349 | xpos altitude=(F,0.971) | altitude height=(F,2.749) 
+Triangle(A|C|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(C,0.874) | altitude height=(C,2.870) 
+Triangle(A|E|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(E,0.097) | altitude height=(E,2.914) 
+Edge ('A', 'E'):
+Triangle(A|B|E): x-coord=(E,6.000), map angle= 0.000 | xpos altitude=(B,3.000) | altitude height=(B,0.000) 
+Triangle(A|E|H): x-coord=(X,0.000), map angle= 29.055 | xpos altitude=(H,1.500) | altitude height=(H,2.500) 
+Triangle(A|E|G): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(G,1.500) | altitude height=(G,2.500) 
+Triangle(A|E|F): x-coord=(X,0.000), map angle= 26.565 | xpos altitude=(F,0.000) | altitude height=(F,3.000) 
+Triangle(A|D|E): x-coord=(X,0.000), map angle= 45.000 | xpos altitude=(D,3.000) | altitude height=(D,3.000) 
+Triangle(A|C|E): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(C,0.000) | altitude height=(C,3.000) 
+Edge ('A', 'F'):
+Triangle(A|B|F): x-coord=(F,6.708), map angle= 0.000 | xpos altitude=(B,2.683) | altitude height=(B,1.342) 
+Triangle(A|D|F): x-coord=(X,0.000), map angle= 45.000 | xpos altitude=(D,2.683) | altitude height=(D,1.342) 
+Triangle(A|F|G): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(G,2.012) | altitude height=(G,2.110) 
+Triangle(A|F|H): x-coord=(X,0.000), map angle= 29.055 | xpos altitude=(H,2.012) | altitude height=(H,2.110) 
+Triangle(A|C|F): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(C,1.342) | altitude height=(C,2.683) 
+Triangle(A|E|F): x-coord=(X,0.000), map angle= 0.000 | xpos altitude=(E,1.342) | altitude height=(E,2.683) 
+------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+Node uuid=B:(0, 0, 0) [:] Surrounding Nodes= H, G, A, E, D, C, F, Edgelist= (B,H,2.915), (B,G,2.915), (B,A,3.000), (B,E,3.000), (B,D,3.000), (B,C,4.243), (B,F,4.243)
+
+TriangleList:
+Triangle A|B|E: Area= 0.000, Edges= (B,A,3.000), (B,E,3.000), (A,E,6.000), Angles=(B,180.000), Altitude=(x=(B,3.000), H=(B,0.000))
+Triangle B|G|H: Area= 3.750, Edges= (B,H,2.915), (B,G,2.915), (H,G,3.000), Angles=(B,61.928), Altitude=(x=(B,1.500), H=(B,2.500))
+Triangle B|E|H: Area= 3.750, Edges= (B,H,2.915), (B,E,3.000), (H,E,2.915), Angles=(B,59.036), Altitude=(x=(B,1.372), H=(B,2.572))
+Triangle B|D|H: Area= 3.750, Edges= (B,H,2.915), (B,D,3.000), (H,D,2.915), Angles=(B,59.036), Altitude=(x=(B,1.372), H=(B,2.572))
+Triangle A|B|G: Area= 3.750, Edges= (B,G,2.915), (B,A,3.000), (G,A,2.915), Angles=(B,59.036), Altitude=(x=(B,1.372), H=(B,2.572))
+Triangle B|D|G: Area= 3.750, Edges= (B,G,2.915), (B,D,3.000), (G,D,2.915), Angles=(B,59.036), Altitude=(x=(B,1.372), H=(B,2.572))
+Triangle A|B|H: Area= 3.750, Edges= (B,H,2.915), (B,A,3.000), (H,A,5.148), Angles=(B,120.964), Altitude=(x=(B,2.525), H=(B,1.457))
+Triangle B|E|G: Area= 3.750, Edges= (B,G,2.915), (B,E,3.000), (G,E,5.148), Angles=(B,120.964), Altitude=(x=(B,2.525), H=(B,1.457))
+Triangle B|F|H: Area= 4.243, Edges= (B,H,2.915), (B,F,4.243), (H,F,2.915), Angles=(B,43.314), Altitude=(x=(B,0.171), H=(B,2.910))
+Triangle B|C|G: Area= 4.243, Edges= (B,G,2.915), (B,C,4.243), (G,C,2.915), Angles=(B,43.314), Altitude=(x=(B,0.171), H=(B,2.910))
+Triangle A|B|D: Area= 4.500, Edges= (B,A,3.000), (B,D,3.000), (A,D,4.243), Angles=(B,90.000), Altitude=(x=(B,2.121), H=(B,2.121))
+Triangle A|B|C: Area= 4.500, Edges= (B,A,3.000), (B,C,4.243), (A,C,3.000), Angles=(B,45.000), Altitude=(x=(B,0.000), H=(B,3.000))
+Triangle B|D|E: Area= 4.500, Edges= (B,E,3.000), (B,D,3.000), (E,D,4.243), Angles=(B,90.000), Altitude=(x=(B,2.121), H=(B,2.121))
+Triangle B|E|F: Area= 4.500, Edges= (B,E,3.000), (B,F,4.243), (E,F,3.000), Angles=(B,45.000), Altitude=(x=(B,0.000), H=(B,3.000))
+Triangle B|C|D: Area= 4.500, Edges= (B,D,3.000), (B,C,4.243), (D,C,3.000), Angles=(B,45.000), Altitude=(x=(B,0.000), H=(B,3.000))
+Triangle B|D|F: Area= 4.500, Edges= (B,D,3.000), (B,F,4.243), (D,F,3.000), Angles=(B,45.000), Altitude=(x=(B,0.000), H=(B,3.000))
+Triangle A|B|F: Area= 4.500, Edges= (B,A,3.000), (B,F,4.243), (A,F,6.708), Angles=(B,135.000), Altitude=(x=(B,2.683), H=(B,1.342))
+Triangle B|C|E: Area= 4.500, Edges= (B,E,3.000), (B,C,4.243), (E,C,6.708), Angles=(B,135.000), Altitude=(x=(B,2.683), H=(B,1.342))
+Triangle B|C|H: Area= 6.185, Edges= (B,H,2.915), (B,C,4.243), (H,C,5.148), Angles=(B,90.000), Altitude=(x=(B,1.651), H=(B,2.403))
+Triangle B|F|G: Area= 6.185, Edges= (B,G,2.915), (B,F,4.243), (G,F,5.148), Angles=(B,90.000), Altitude=(x=(B,1.651), H=(B,2.403))
+Triangle B|C|F: Area= 9.000, Edges= (B,C,4.243), (B,F,4.243), (C,F,6.000), Angles=(B,90.000), Altitude=(x=(B,3.000), H=(B,3.000))
+
+Opposite edges=(H,E,2.915), (H,D,2.915), (H,F,2.915), (G,A,2.915), (G,D,2.915), (G,C,2.915), (H,G,3.000), (A,C,3.000), (E,F,3.000), (D,C,3.000), (D,F,3.000), (A,D,4.243), (E,D,4.243), (H,A,5.148), (H,C,5.148), (G,E,5.148), (G,F,5.148), (A,E,6.000), (C,F,6.000), (A,F,6.708), (E,C,6.708) [:]
+
+Adjacent triangles of B:
+Edge ('B', 'H'):
+Triangle(B|G|H): x-coord=(H,2.915), map angle= 0.000 | xpos altitude=(G,1.372) | altitude height=(G,2.572) 
+Triangle(B|E|H): x-coord=(X,0.000), map angle= 120.964 | xpos altitude=(E,1.372) | altitude height=(E,2.572) 
+Triangle(B|D|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(D,1.372) | altitude height=(D,2.572) 
+Triangle(A|B|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(A,1.543) | altitude height=(A,2.572) 
+Triangle(B|F|H): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(F,0.171) | altitude height=(F,2.910) 
+Triangle(B|C|H): x-coord=(X,0.000), map angle= 43.314 | xpos altitude=(C,0.000) | altitude height=(C,4.243) 
+Edge ('B', 'G'):
+Triangle(B|G|H): x-coord=(G,2.915), map angle= 0.000 | xpos altitude=(H,1.372) | altitude height=(H,2.572) 
+Triangle(A|B|G): x-coord=(X,0.000), map angle= 120.964 | xpos altitude=(A,1.372) | altitude height=(A,2.572) 
+Triangle(B|D|G): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(D,1.372) | altitude height=(D,2.572) 
+Triangle(B|E|G): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(E,1.543) | altitude height=(E,2.572) 
+Triangle(B|C|G): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(C,0.171) | altitude height=(C,2.910) 
+Triangle(B|F|G): x-coord=(X,0.000), map angle= 43.314 | xpos altitude=(F,0.000) | altitude height=(F,4.243) 
+Edge ('B', 'A'):
+Triangle(A|B|E): x-coord=(A,3.000), map angle= 0.000 | xpos altitude=(E,3.000) | altitude height=(E,0.000) 
+Triangle(A|B|G): x-coord=(X,0.000), map angle= 120.964 | xpos altitude=(G,1.500) | altitude height=(G,2.500) 
+Triangle(A|B|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(H,1.500) | altitude height=(H,2.500) 
+Triangle(A|B|D): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(D,0.000) | altitude height=(D,3.000) 
+Triangle(A|B|C): x-coord=(X,0.000), map angle= 135.000 | xpos altitude=(C,0.000) | altitude height=(C,3.000) 
+Triangle(A|B|F): x-coord=(X,0.000), map angle= 45.000 | xpos altitude=(F,3.000) | altitude height=(F,3.000) 
+Edge ('B', 'E'):
+Triangle(A|B|E): x-coord=(E,3.000), map angle= 0.000 | xpos altitude=(A,3.000) | altitude height=(A,0.000) 
+Triangle(B|E|H): x-coord=(X,0.000), map angle= 120.964 | xpos altitude=(H,1.500) | altitude height=(H,2.500) 
+Triangle(B|E|G): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(G,1.500) | altitude height=(G,2.500) 
+Triangle(B|D|E): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(D,0.000) | altitude height=(D,3.000) 
+Triangle(B|E|F): x-coord=(X,0.000), map angle= 135.000 | xpos altitude=(F,0.000) | altitude height=(F,3.000) 
+Triangle(B|C|E): x-coord=(X,0.000), map angle= 45.000 | xpos altitude=(C,3.000) | altitude height=(C,3.000) 
+Edge ('B', 'D'):
+Triangle(B|D|H): x-coord=(D,3.000), map angle= 0.000 | xpos altitude=(H,1.500) | altitude height=(H,2.500) 
+Triangle(B|D|G): x-coord=(X,0.000), map angle= 61.928 | xpos altitude=(G,1.500) | altitude height=(G,2.500) 
+Triangle(A|B|D): x-coord=(X,0.000), map angle= 120.964 | xpos altitude=(A,0.000) | altitude height=(A,3.000) 
+Triangle(B|D|E): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(E,0.000) | altitude height=(E,3.000) 
+Triangle(B|C|D): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(C,0.000) | altitude height=(C,3.000) 
+Triangle(B|D|F): x-coord=(X,0.000), map angle= 43.314 | xpos altitude=(F,0.000) | altitude height=(F,3.000) 
+Edge ('B', 'C'):
+Triangle(B|C|G): x-coord=(C,4.243), map angle= 0.000 | xpos altitude=(G,2.121) | altitude height=(G,2.000) 
+Triangle(A|B|C): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(A,2.121) | altitude height=(A,2.121) 
+Triangle(B|C|D): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(D,2.121) | altitude height=(D,2.121) 
+Triangle(B|C|E): x-coord=(X,0.000), map angle= 120.964 | xpos altitude=(E,2.121) | altitude height=(E,2.121) 
+Triangle(B|C|H): x-coord=(X,0.000), map angle= 61.928 | xpos altitude=(H,0.000) | altitude height=(H,2.915) 
+Triangle(B|C|F): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(F,0.000) | altitude height=(F,4.243) 
+Edge ('B', 'F'):
+Triangle(B|F|H): x-coord=(F,4.243), map angle= 0.000 | xpos altitude=(H,2.121) | altitude height=(H,2.000) 
+Triangle(B|E|F): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(E,2.121) | altitude height=(E,2.121) 
+Triangle(B|D|F): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(D,2.121) | altitude height=(D,2.121) 
+Triangle(A|B|F): x-coord=(X,0.000), map angle= 120.964 | xpos altitude=(A,2.121) | altitude height=(A,2.121) 
+Triangle(B|F|G): x-coord=(X,0.000), map angle= 61.928 | xpos altitude=(G,0.000) | altitude height=(G,2.915) 
+Triangle(B|C|F): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(C,0.000) | altitude height=(C,4.243) 
+------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+Node uuid=C:(0, 0, 0) [:] Surrounding Nodes= G, A, D, B, H, F, E, Edgelist= (C,G,2.915), (C,A,3.000), (C,D,3.000), (C,B,4.243), (C,H,5.148), (C,F,6.000), (C,E,6.708)
+
+TriangleList:
+Triangle C|D|F: Area= 0.000, Edges= (C,D,3.000), (C,F,6.000), (D,F,3.000), Angles=(C,0.000), Altitude=(x=(C,3.000), H=(C,0.000))
+Triangle A|C|G: Area= 3.750, Edges= (C,G,2.915), (C,A,3.000), (G,A,2.915), Angles=(C,59.036), Altitude=(x=(C,1.372), H=(C,2.572))
+Triangle C|D|G: Area= 3.750, Edges= (C,G,2.915), (C,D,3.000), (G,D,2.915), Angles=(C,59.036), Altitude=(x=(C,1.372), H=(C,2.572))
+Triangle C|G|H: Area= 3.750, Edges= (C,G,2.915), (C,H,5.148), (G,H,3.000), Angles=(C,29.982), Altitude=(x=(C,1.500), H=(C,2.500))
+Triangle C|D|H: Area= 3.750, Edges= (C,D,3.000), (C,H,5.148), (D,H,2.915), Angles=(C,29.055), Altitude=(x=(C,1.543), H=(C,2.572))
+Triangle B|C|G: Area= 4.243, Edges= (C,G,2.915), (C,B,4.243), (G,B,2.915), Angles=(C,43.314), Altitude=(x=(C,0.171), H=(C,2.910))
+Triangle A|C|D: Area= 4.500, Edges= (C,A,3.000), (C,D,3.000), (A,D,4.243), Angles=(C,90.000), Altitude=(x=(C,2.121), H=(C,2.121))
+Triangle A|B|C: Area= 4.500, Edges= (C,A,3.000), (C,B,4.243), (A,B,3.000), Angles=(C,45.000), Altitude=(x=(C,0.000), H=(C,3.000))
+Triangle B|C|D: Area= 4.500, Edges= (C,D,3.000), (C,B,4.243), (D,B,3.000), Angles=(C,45.000), Altitude=(x=(C,0.000), H=(C,3.000))
+Triangle C|D|E: Area= 4.500, Edges= (C,D,3.000), (C,E,6.708), (D,E,4.243), Angles=(C,26.565), Altitude=(x=(C,2.121), H=(C,2.121))
+Triangle B|C|E: Area= 4.500, Edges= (C,B,4.243), (C,E,6.708), (B,E,3.000), Angles=(C,18.435), Altitude=(x=(C,3.000), H=(C,3.000))
+Triangle B|C|H: Area= 6.185, Edges= (C,B,4.243), (C,H,5.148), (B,H,2.915), Angles=(C,34.496), Altitude=(x=(C,0.000), H=(C,4.243))
+Triangle C|E|G: Area= 7.075, Edges= (C,G,2.915), (C,E,6.708), (G,E,5.148), Angles=(C,46.349), Altitude=(x=(C,0.971), H=(C,2.749))
+Triangle C|E|H: Area= 7.075, Edges= (C,H,5.148), (C,E,6.708), (H,E,2.915), Angles=(C,24.191), Altitude=(x=(C,1.715), H=(C,4.854))
+Triangle A|C|H: Area= 7.387, Edges= (C,A,3.000), (C,H,5.148), (A,H,5.148), Angles=(C,73.059), Altitude=(x=(C,0.874), H=(C,2.870))
+Triangle C|F|H: Area= 7.500, Edges= (C,H,5.148), (C,F,6.000), (H,F,2.915), Angles=(C,29.055), Altitude=(x=(C,0.171), H=(C,5.145))
+Triangle C|F|G: Area= 7.500, Edges= (C,G,2.915), (C,F,6.000), (G,F,5.148), Angles=(C,59.036), Altitude=(x=(C,0.097), H=(C,2.914))
+Triangle A|C|E: Area= 9.000, Edges= (C,A,3.000), (C,E,6.708), (A,E,6.000), Angles=(C,63.435), Altitude=(x=(C,0.000), H=(C,3.000))
+Triangle C|E|F: Area= 9.000, Edges= (C,F,6.000), (C,E,6.708), (F,E,3.000), Angles=(C,26.565), Altitude=(x=(C,0.000), H=(C,6.000))
+Triangle B|C|F: Area= 9.000, Edges= (C,B,4.243), (C,F,6.000), (B,F,4.243), Angles=(C,45.000), Altitude=(x=(C,0.000), H=(C,4.243))
+Triangle A|C|F: Area= 9.000, Edges= (C,A,3.000), (C,F,6.000), (A,F,6.708), Angles=(C,90.000), Altitude=(x=(C,1.342), H=(C,2.683))
+
+Opposite edges=(G,A,2.915), (G,D,2.915), (G,B,2.915), (D,H,2.915), (B,H,2.915), (H,F,2.915), (H,E,2.915), (G,H,3.000), (A,B,3.000), (D,B,3.000), (D,F,3.000), (B,E,3.000), (F,E,3.000), (A,D,4.243), (D,E,4.243), (B,F,4.243), (G,F,5.148), (G,E,5.148), (A,H,5.148), (A,E,6.000), (A,F,6.708) [:]
+
+Adjacent triangles of C:
+Edge ('C', 'G'):
+Triangle(A|C|G): x-coord=(G,2.915), map angle= 0.000 | xpos altitude=(A,1.372) | altitude height=(A,2.572) 
+Triangle(C|D|G): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(D,1.372) | altitude height=(D,2.572) 
+Triangle(C|G|H): x-coord=(X,0.000), map angle= 73.059 | xpos altitude=(H,1.543) | altitude height=(H,2.572) 
+Triangle(B|C|G): x-coord=(X,0.000), map angle= 45.000 | xpos altitude=(B,0.171) | altitude height=(B,2.910) 
+Triangle(C|E|G): x-coord=(X,0.000), map angle= 63.435 | xpos altitude=(E,1.715) | altitude height=(E,4.854) 
+Triangle(C|F|G): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(F,0.171) | altitude height=(F,5.145) 
+Edge ('C', 'A'):
+Triangle(A|C|G): x-coord=(A,3.000), map angle= 0.000 | xpos altitude=(G,1.500) | altitude height=(G,2.500) 
+Triangle(A|C|D): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(D,0.000) | altitude height=(D,3.000) 
+Triangle(A|B|C): x-coord=(X,0.000), map angle= 43.314 | xpos altitude=(B,0.000) | altitude height=(B,3.000) 
+Triangle(A|C|H): x-coord=(X,0.000), map angle= 29.982 | xpos altitude=(H,1.500) | altitude height=(H,4.924) 
+Triangle(A|C|E): x-coord=(X,0.000), map angle= 46.349 | xpos altitude=(E,0.000) | altitude height=(E,6.000) 
+Triangle(A|C|F): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(F,0.000) | altitude height=(F,6.000) 
+Edge ('C', 'D'):
+Triangle(C|D|F): x-coord=(D,3.000), map angle= 0.000 | xpos altitude=(F,3.000) | altitude height=(F,0.000) 
+Triangle(C|D|G): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(G,1.500) | altitude height=(G,2.500) 
+Triangle(C|D|H): x-coord=(X,0.000), map angle= 29.055 | xpos altitude=(H,1.500) | altitude height=(H,2.500) 
+Triangle(A|C|D): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(A,0.000) | altitude height=(A,3.000) 
+Triangle(B|C|D): x-coord=(X,0.000), map angle= 45.000 | xpos altitude=(B,0.000) | altitude height=(B,3.000) 
+Triangle(C|D|E): x-coord=(X,0.000), map angle= 26.565 | xpos altitude=(E,3.000) | altitude height=(E,3.000) 
+Edge ('C', 'B'):
+Triangle(B|C|G): x-coord=(B,4.243), map angle= 0.000 | xpos altitude=(G,2.121) | altitude height=(G,2.000) 
+Triangle(A|B|C): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(A,2.121) | altitude height=(A,2.121) 
+Triangle(B|C|D): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(D,2.121) | altitude height=(D,2.121) 
+Triangle(B|C|E): x-coord=(X,0.000), map angle= 46.349 | xpos altitude=(E,2.121) | altitude height=(E,2.121) 
+Triangle(B|C|H): x-coord=(X,0.000), map angle= 29.982 | xpos altitude=(H,0.000) | altitude height=(H,2.915) 
+Triangle(B|C|F): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(F,0.000) | altitude height=(F,4.243) 
+Edge ('C', 'H'):
+Triangle(C|G|H): x-coord=(H,5.148), map angle= 0.000 | xpos altitude=(G,2.525) | altitude height=(G,1.457) 
+Triangle(C|D|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(D,2.525) | altitude height=(D,1.457) 
+Triangle(B|C|H): x-coord=(X,0.000), map angle= 43.314 | xpos altitude=(B,1.651) | altitude height=(B,2.403) 
+Triangle(C|E|H): x-coord=(X,0.000), map angle= 46.349 | xpos altitude=(E,0.971) | altitude height=(E,2.749) 
+Triangle(A|C|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(A,0.874) | altitude height=(A,2.870) 
+Triangle(C|F|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(F,0.097) | altitude height=(F,2.914) 
+Edge ('C', 'F'):
+Triangle(C|D|F): x-coord=(F,6.000), map angle= 0.000 | xpos altitude=(D,3.000) | altitude height=(D,0.000) 
+Triangle(C|F|H): x-coord=(X,0.000), map angle= 29.055 | xpos altitude=(H,1.500) | altitude height=(H,2.500) 
+Triangle(C|F|G): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(G,1.500) | altitude height=(G,2.500) 
+Triangle(C|E|F): x-coord=(X,0.000), map angle= 26.565 | xpos altitude=(E,0.000) | altitude height=(E,3.000) 
+Triangle(B|C|F): x-coord=(X,0.000), map angle= 45.000 | xpos altitude=(B,3.000) | altitude height=(B,3.000) 
+Triangle(A|C|F): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(A,0.000) | altitude height=(A,3.000) 
+Edge ('C', 'E'):
+Triangle(C|D|E): x-coord=(E,6.708), map angle= 0.000 | xpos altitude=(D,2.683) | altitude height=(D,1.342) 
+Triangle(B|C|E): x-coord=(X,0.000), map angle= 45.000 | xpos altitude=(B,2.683) | altitude height=(B,1.342) 
+Triangle(C|E|G): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(G,2.012) | altitude height=(G,2.110) 
+Triangle(C|E|H): x-coord=(X,0.000), map angle= 29.055 | xpos altitude=(H,2.012) | altitude height=(H,2.110) 
+Triangle(A|C|E): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(A,1.342) | altitude height=(A,2.683) 
+Triangle(C|E|F): x-coord=(X,0.000), map angle= 0.000 | xpos altitude=(F,1.342) | altitude height=(F,2.683) 
+------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+Node uuid=D:(0, 0, 0) [:] Surrounding Nodes= H, G, F, C, B, A, E, Edgelist= (D,H,2.915), (D,G,2.915), (D,F,3.000), (D,C,3.000), (D,B,3.000), (D,A,4.243), (D,E,4.243)
+
+TriangleList:
+Triangle C|D|F: Area= 0.000, Edges= (D,F,3.000), (D,C,3.000), (F,C,6.000), Angles=(D,180.000), Altitude=(x=(D,3.000), H=(D,0.000))
+Triangle D|G|H: Area= 3.750, Edges= (D,H,2.915), (D,G,2.915), (H,G,3.000), Angles=(D,61.928), Altitude=(x=(D,1.500), H=(D,2.500))
+Triangle D|F|H: Area= 3.750, Edges= (D,H,2.915), (D,F,3.000), (H,F,2.915), Angles=(D,59.036), Altitude=(x=(D,1.372), H=(D,2.572))
+Triangle B|D|H: Area= 3.750, Edges= (D,H,2.915), (D,B,3.000), (H,B,2.915), Angles=(D,59.036), Altitude=(x=(D,1.372), H=(D,2.572))
+Triangle C|D|G: Area= 3.750, Edges= (D,G,2.915), (D,C,3.000), (G,C,2.915), Angles=(D,59.036), Altitude=(x=(D,1.372), H=(D,2.572))
+Triangle B|D|G: Area= 3.750, Edges= (D,G,2.915), (D,B,3.000), (G,B,2.915), Angles=(D,59.036), Altitude=(x=(D,1.372), H=(D,2.572))
+Triangle C|D|H: Area= 3.750, Edges= (D,H,2.915), (D,C,3.000), (H,C,5.148), Angles=(D,120.964), Altitude=(x=(D,2.525), H=(D,1.457))
+Triangle D|F|G: Area= 3.750, Edges= (D,G,2.915), (D,F,3.000), (G,F,5.148), Angles=(D,120.964), Altitude=(x=(D,2.525), H=(D,1.457))
+Triangle D|E|H: Area= 4.243, Edges= (D,H,2.915), (D,E,4.243), (H,E,2.915), Angles=(D,43.314), Altitude=(x=(D,0.171), H=(D,2.910))
+Triangle A|D|G: Area= 4.243, Edges= (D,G,2.915), (D,A,4.243), (G,A,2.915), Angles=(D,43.314), Altitude=(x=(D,0.171), H=(D,2.910))
+Triangle B|D|F: Area= 4.500, Edges= (D,F,3.000), (D,B,3.000), (F,B,4.243), Angles=(D,90.000), Altitude=(x=(D,2.121), H=(D,2.121))
+Triangle D|E|F: Area= 4.500, Edges= (D,F,3.000), (D,E,4.243), (F,E,3.000), Angles=(D,45.000), Altitude=(x=(D,0.000), H=(D,3.000))
+Triangle B|C|D: Area= 4.500, Edges= (D,C,3.000), (D,B,3.000), (C,B,4.243), Angles=(D,90.000), Altitude=(x=(D,2.121), H=(D,2.121))
+Triangle A|C|D: Area= 4.500, Edges= (D,C,3.000), (D,A,4.243), (C,A,3.000), Angles=(D,45.000), Altitude=(x=(D,0.000), H=(D,3.000))
+Triangle A|B|D: Area= 4.500, Edges= (D,B,3.000), (D,A,4.243), (B,A,3.000), Angles=(D,45.000), Altitude=(x=(D,0.000), H=(D,3.000))
+Triangle B|D|E: Area= 4.500, Edges= (D,B,3.000), (D,E,4.243), (B,E,3.000), Angles=(D,45.000), Altitude=(x=(D,0.000), H=(D,3.000))
+Triangle A|D|F: Area= 4.500, Edges= (D,F,3.000), (D,A,4.243), (F,A,6.708), Angles=(D,135.000), Altitude=(x=(D,2.683), H=(D,1.342))
+Triangle C|D|E: Area= 4.500, Edges= (D,C,3.000), (D,E,4.243), (C,E,6.708), Angles=(D,135.000), Altitude=(x=(D,2.683), H=(D,1.342))
+Triangle A|D|H: Area= 6.185, Edges= (D,H,2.915), (D,A,4.243), (H,A,5.148), Angles=(D,90.000), Altitude=(x=(D,1.651), H=(D,2.403))
+Triangle D|E|G: Area= 6.185, Edges= (D,G,2.915), (D,E,4.243), (G,E,5.148), Angles=(D,90.000), Altitude=(x=(D,1.651), H=(D,2.403))
+Triangle A|D|E: Area= 9.000, Edges= (D,A,4.243), (D,E,4.243), (A,E,6.000), Angles=(D,90.000), Altitude=(x=(D,3.000), H=(D,3.000))
+
+Opposite edges=(H,F,2.915), (H,B,2.915), (H,E,2.915), (G,C,2.915), (G,B,2.915), (G,A,2.915), (H,G,3.000), (F,E,3.000), (C,A,3.000), (B,A,3.000), (B,E,3.000), (F,B,4.243), (C,B,4.243), (H,C,5.148), (H,A,5.148), (G,F,5.148), (G,E,5.148), (F,C,6.000), (A,E,6.000), (F,A,6.708), (C,E,6.708) [:]
+
+Adjacent triangles of D:
+Edge ('D', 'H'):
+Triangle(D|G|H): x-coord=(H,2.915), map angle= 0.000 | xpos altitude=(G,1.372) | altitude height=(G,2.572) 
+Triangle(D|F|H): x-coord=(X,0.000), map angle= 120.964 | xpos altitude=(F,1.372) | altitude height=(F,2.572) 
+Triangle(B|D|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(B,1.372) | altitude height=(B,2.572) 
+Triangle(C|D|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(C,1.543) | altitude height=(C,2.572) 
+Triangle(D|E|H): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(E,0.171) | altitude height=(E,2.910) 
+Triangle(A|D|H): x-coord=(X,0.000), map angle= 43.314 | xpos altitude=(A,0.000) | altitude height=(A,4.243) 
+Edge ('D', 'G'):
+Triangle(D|G|H): x-coord=(G,2.915), map angle= 0.000 | xpos altitude=(H,1.372) | altitude height=(H,2.572) 
+Triangle(C|D|G): x-coord=(X,0.000), map angle= 120.964 | xpos altitude=(C,1.372) | altitude height=(C,2.572) 
+Triangle(B|D|G): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(B,1.372) | altitude height=(B,2.572) 
+Triangle(D|F|G): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(F,1.543) | altitude height=(F,2.572) 
+Triangle(A|D|G): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(A,0.171) | altitude height=(A,2.910) 
+Triangle(D|E|G): x-coord=(X,0.000), map angle= 43.314 | xpos altitude=(E,0.000) | altitude height=(E,4.243) 
+Edge ('D', 'F'):
+Triangle(C|D|F): x-coord=(F,3.000), map angle= 0.000 | xpos altitude=(C,3.000) | altitude height=(C,0.000) 
+Triangle(D|F|H): x-coord=(X,0.000), map angle= 120.964 | xpos altitude=(H,1.500) | altitude height=(H,2.500) 
+Triangle(D|F|G): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(G,1.500) | altitude height=(G,2.500) 
+Triangle(B|D|F): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(B,0.000) | altitude height=(B,3.000) 
+Triangle(D|E|F): x-coord=(X,0.000), map angle= 135.000 | xpos altitude=(E,0.000) | altitude height=(E,3.000) 
+Triangle(A|D|F): x-coord=(X,0.000), map angle= 45.000 | xpos altitude=(A,3.000) | altitude height=(A,3.000) 
+Edge ('D', 'C'):
+Triangle(C|D|F): x-coord=(C,3.000), map angle= 0.000 | xpos altitude=(F,3.000) | altitude height=(F,0.000) 
+Triangle(C|D|G): x-coord=(X,0.000), map angle= 120.964 | xpos altitude=(G,1.500) | altitude height=(G,2.500) 
+Triangle(C|D|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(H,1.500) | altitude height=(H,2.500) 
+Triangle(B|C|D): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(B,0.000) | altitude height=(B,3.000) 
+Triangle(A|C|D): x-coord=(X,0.000), map angle= 135.000 | xpos altitude=(A,0.000) | altitude height=(A,3.000) 
+Triangle(C|D|E): x-coord=(X,0.000), map angle= 45.000 | xpos altitude=(E,3.000) | altitude height=(E,3.000) 
+Edge ('D', 'B'):
+Triangle(B|D|H): x-coord=(B,3.000), map angle= 0.000 | xpos altitude=(H,1.500) | altitude height=(H,2.500) 
+Triangle(B|D|G): x-coord=(X,0.000), map angle= 61.928 | xpos altitude=(G,1.500) | altitude height=(G,2.500) 
+Triangle(B|D|F): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(F,0.000) | altitude height=(F,3.000) 
+Triangle(B|C|D): x-coord=(X,0.000), map angle= 120.964 | xpos altitude=(C,0.000) | altitude height=(C,3.000) 
+Triangle(A|B|D): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(A,0.000) | altitude height=(A,3.000) 
+Triangle(B|D|E): x-coord=(X,0.000), map angle= 43.314 | xpos altitude=(E,0.000) | altitude height=(E,3.000) 
+Edge ('D', 'A'):
+Triangle(A|D|G): x-coord=(A,4.243), map angle= 0.000 | xpos altitude=(G,2.121) | altitude height=(G,2.000) 
+Triangle(A|C|D): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(C,2.121) | altitude height=(C,2.121) 
+Triangle(A|B|D): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(B,2.121) | altitude height=(B,2.121) 
+Triangle(A|D|F): x-coord=(X,0.000), map angle= 120.964 | xpos altitude=(F,2.121) | altitude height=(F,2.121) 
+Triangle(A|D|H): x-coord=(X,0.000), map angle= 61.928 | xpos altitude=(H,0.000) | altitude height=(H,2.915) 
+Triangle(A|D|E): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(E,0.000) | altitude height=(E,4.243) 
+Edge ('D', 'E'):
+Triangle(D|E|H): x-coord=(E,4.243), map angle= 0.000 | xpos altitude=(H,2.121) | altitude height=(H,2.000) 
+Triangle(D|E|F): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(F,2.121) | altitude height=(F,2.121) 
+Triangle(B|D|E): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(B,2.121) | altitude height=(B,2.121) 
+Triangle(C|D|E): x-coord=(X,0.000), map angle= 120.964 | xpos altitude=(C,2.121) | altitude height=(C,2.121) 
+Triangle(D|E|G): x-coord=(X,0.000), map angle= 61.928 | xpos altitude=(G,0.000) | altitude height=(G,2.915) 
+Triangle(A|D|E): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(A,0.000) | altitude height=(A,4.243) 
+------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+Node uuid=E:(0, 0, 0) [:] Surrounding Nodes= H, F, B, D, G, A, C, Edgelist= (E,H,2.915), (E,F,3.000), (E,B,3.000), (E,D,4.243), (E,G,5.148), (E,A,6.000), (E,C,6.708)
+
+TriangleList:
+Triangle A|B|E: Area= 0.000, Edges= (E,B,3.000), (E,A,6.000), (B,A,3.000), Angles=(E,0.000), Altitude=(x=(E,3.000), H=(E,0.000))
+Triangle E|F|H: Area= 3.750, Edges= (E,H,2.915), (E,F,3.000), (H,F,2.915), Angles=(E,59.036), Altitude=(x=(E,1.372), H=(E,2.572))
+Triangle B|E|H: Area= 3.750, Edges= (E,H,2.915), (E,B,3.000), (H,B,2.915), Angles=(E,59.036), Altitude=(x=(E,1.372), H=(E,2.572))
+Triangle E|G|H: Area= 3.750, Edges= (E,H,2.915), (E,G,5.148), (H,G,3.000), Angles=(E,29.982), Altitude=(x=(E,1.500), H=(E,2.500))
+Triangle B|E|G: Area= 3.750, Edges= (E,B,3.000), (E,G,5.148), (B,G,2.915), Angles=(E,29.055), Altitude=(x=(E,1.543), H=(E,2.572))
+Triangle D|E|H: Area= 4.243, Edges= (E,H,2.915), (E,D,4.243), (H,D,2.915), Angles=(E,43.314), Altitude=(x=(E,0.171), H=(E,2.910))
+Triangle B|E|F: Area= 4.500, Edges= (E,F,3.000), (E,B,3.000), (F,B,4.243), Angles=(E,90.000), Altitude=(x=(E,2.121), H=(E,2.121))
+Triangle D|E|F: Area= 4.500, Edges= (E,F,3.000), (E,D,4.243), (F,D,3.000), Angles=(E,45.000), Altitude=(x=(E,0.000), H=(E,3.000))
+Triangle B|D|E: Area= 4.500, Edges= (E,B,3.000), (E,D,4.243), (B,D,3.000), Angles=(E,45.000), Altitude=(x=(E,0.000), H=(E,3.000))
+Triangle B|C|E: Area= 4.500, Edges= (E,B,3.000), (E,C,6.708), (B,C,4.243), Angles=(E,26.565), Altitude=(x=(E,2.121), H=(E,2.121))
+Triangle C|D|E: Area= 4.500, Edges= (E,D,4.243), (E,C,6.708), (D,C,3.000), Angles=(E,18.435), Altitude=(x=(E,3.000), H=(E,3.000))
+Triangle D|E|G: Area= 6.185, Edges= (E,D,4.243), (E,G,5.148), (D,G,2.915), Angles=(E,34.496), Altitude=(x=(E,0.000), H=(E,4.243))
+Triangle C|E|H: Area= 7.075, Edges= (E,H,2.915), (E,C,6.708), (H,C,5.148), Angles=(E,46.349), Altitude=(x=(E,0.971), H=(E,2.749))
+Triangle C|E|G: Area= 7.075, Edges= (E,G,5.148), (E,C,6.708), (G,C,2.915), Angles=(E,24.191), Altitude=(x=(E,1.715), H=(E,4.854))
+Triangle E|F|G: Area= 7.387, Edges= (E,F,3.000), (E,G,5.148), (F,G,5.148), Angles=(E,73.059), Altitude=(x=(E,0.874), H=(E,2.870))
+Triangle A|E|G: Area= 7.500, Edges= (E,G,5.148), (E,A,6.000), (G,A,2.915), Angles=(E,29.055), Altitude=(x=(E,0.171), H=(E,5.145))
+Triangle A|E|H: Area= 7.500, Edges= (E,H,2.915), (E,A,6.000), (H,A,5.148), Angles=(E,59.036), Altitude=(x=(E,0.097), H=(E,2.914))
+Triangle C|E|F: Area= 9.000, Edges= (E,F,3.000), (E,C,6.708), (F,C,6.000), Angles=(E,63.435), Altitude=(x=(E,0.000), H=(E,3.000))
+Triangle A|C|E: Area= 9.000, Edges= (E,A,6.000), (E,C,6.708), (A,C,3.000), Angles=(E,26.565), Altitude=(x=(E,0.000), H=(E,6.000))
+Triangle A|D|E: Area= 9.000, Edges= (E,D,4.243), (E,A,6.000), (D,A,4.243), Angles=(E,45.000), Altitude=(x=(E,0.000), H=(E,4.243))
+Triangle A|E|F: Area= 9.000, Edges= (E,F,3.000), (E,A,6.000), (F,A,6.708), Angles=(E,90.000), Altitude=(x=(E,1.342), H=(E,2.683))
+
+Opposite edges=(H,F,2.915), (H,B,2.915), (H,D,2.915), (B,G,2.915), (D,G,2.915), (G,A,2.915), (G,C,2.915), (H,G,3.000), (F,D,3.000), (B,D,3.000), (B,A,3.000), (D,C,3.000), (A,C,3.000), (F,B,4.243), (B,C,4.243), (D,A,4.243), (H,A,5.148), (H,C,5.148), (F,G,5.148), (F,C,6.000), (F,A,6.708) [:]
+
+Adjacent triangles of E:
+Edge ('E', 'H'):
+Triangle(E|F|H): x-coord=(H,2.915), map angle= 0.000 | xpos altitude=(F,1.372) | altitude height=(F,2.572) 
+Triangle(B|E|H): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(B,1.372) | altitude height=(B,2.572) 
+Triangle(E|G|H): x-coord=(X,0.000), map angle= 73.059 | xpos altitude=(G,1.543) | altitude height=(G,2.572) 
+Triangle(D|E|H): x-coord=(X,0.000), map angle= 45.000 | xpos altitude=(D,0.171) | altitude height=(D,2.910) 
+Triangle(C|E|H): x-coord=(X,0.000), map angle= 63.435 | xpos altitude=(C,1.715) | altitude height=(C,4.854) 
+Triangle(A|E|H): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(A,0.171) | altitude height=(A,5.145) 
+Edge ('E', 'F'):
+Triangle(E|F|H): x-coord=(F,3.000), map angle= 0.000 | xpos altitude=(H,1.500) | altitude height=(H,2.500) 
+Triangle(B|E|F): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(B,0.000) | altitude height=(B,3.000) 
+Triangle(D|E|F): x-coord=(X,0.000), map angle= 43.314 | xpos altitude=(D,0.000) | altitude height=(D,3.000) 
+Triangle(E|F|G): x-coord=(X,0.000), map angle= 29.982 | xpos altitude=(G,1.500) | altitude height=(G,4.924) 
+Triangle(C|E|F): x-coord=(X,0.000), map angle= 46.349 | xpos altitude=(C,0.000) | altitude height=(C,6.000) 
+Triangle(A|E|F): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(A,0.000) | altitude height=(A,6.000) 
+Edge ('E', 'B'):
+Triangle(A|B|E): x-coord=(B,3.000), map angle= 0.000 | xpos altitude=(A,3.000) | altitude height=(A,0.000) 
+Triangle(B|E|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(H,1.500) | altitude height=(H,2.500) 
+Triangle(B|E|G): x-coord=(X,0.000), map angle= 29.055 | xpos altitude=(G,1.500) | altitude height=(G,2.500) 
+Triangle(B|E|F): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(F,0.000) | altitude height=(F,3.000) 
+Triangle(B|D|E): x-coord=(X,0.000), map angle= 45.000 | xpos altitude=(D,0.000) | altitude height=(D,3.000) 
+Triangle(B|C|E): x-coord=(X,0.000), map angle= 26.565 | xpos altitude=(C,3.000) | altitude height=(C,3.000) 
+Edge ('E', 'D'):
+Triangle(D|E|H): x-coord=(D,4.243), map angle= 0.000 | xpos altitude=(H,2.121) | altitude height=(H,2.000) 
+Triangle(D|E|F): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(F,2.121) | altitude height=(F,2.121) 
+Triangle(B|D|E): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(B,2.121) | altitude height=(B,2.121) 
+Triangle(C|D|E): x-coord=(X,0.000), map angle= 46.349 | xpos altitude=(C,2.121) | altitude height=(C,2.121) 
+Triangle(D|E|G): x-coord=(X,0.000), map angle= 29.982 | xpos altitude=(G,0.000) | altitude height=(G,2.915) 
+Triangle(A|D|E): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(A,0.000) | altitude height=(A,4.243) 
+Edge ('E', 'G'):
+Triangle(E|G|H): x-coord=(G,5.148), map angle= 0.000 | xpos altitude=(H,2.525) | altitude height=(H,1.457) 
+Triangle(B|E|G): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(B,2.525) | altitude height=(B,1.457) 
+Triangle(D|E|G): x-coord=(X,0.000), map angle= 43.314 | xpos altitude=(D,1.651) | altitude height=(D,2.403) 
+Triangle(C|E|G): x-coord=(X,0.000), map angle= 46.349 | xpos altitude=(C,0.971) | altitude height=(C,2.749) 
+Triangle(E|F|G): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(F,0.874) | altitude height=(F,2.870) 
+Triangle(A|E|G): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(A,0.097) | altitude height=(A,2.914) 
+Edge ('E', 'A'):
+Triangle(A|B|E): x-coord=(A,6.000), map angle= 0.000 | xpos altitude=(B,3.000) | altitude height=(B,0.000) 
+Triangle(A|E|G): x-coord=(X,0.000), map angle= 29.055 | xpos altitude=(G,1.500) | altitude height=(G,2.500) 
+Triangle(A|E|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(H,1.500) | altitude height=(H,2.500) 
+Triangle(A|C|E): x-coord=(X,0.000), map angle= 26.565 | xpos altitude=(C,0.000) | altitude height=(C,3.000) 
+Triangle(A|D|E): x-coord=(X,0.000), map angle= 45.000 | xpos altitude=(D,3.000) | altitude height=(D,3.000) 
+Triangle(A|E|F): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(F,0.000) | altitude height=(F,3.000) 
+Edge ('E', 'C'):
+Triangle(B|C|E): x-coord=(C,6.708), map angle= 0.000 | xpos altitude=(B,2.683) | altitude height=(B,1.342) 
+Triangle(C|D|E): x-coord=(X,0.000), map angle= 45.000 | xpos altitude=(D,2.683) | altitude height=(D,1.342) 
+Triangle(C|E|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(H,2.012) | altitude height=(H,2.110) 
+Triangle(C|E|G): x-coord=(X,0.000), map angle= 29.055 | xpos altitude=(G,2.012) | altitude height=(G,2.110) 
+Triangle(C|E|F): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(F,1.342) | altitude height=(F,2.683) 
+Triangle(A|C|E): x-coord=(X,0.000), map angle= 0.000 | xpos altitude=(A,1.342) | altitude height=(A,2.683) 
+------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+Node uuid=F:(0, 0, 0) [:] Surrounding Nodes= H, E, D, B, G, C, A, Edgelist= (F,H,2.915), (F,E,3.000), (F,D,3.000), (F,B,4.243), (F,G,5.148), (F,C,6.000), (F,A,6.708)
+
+TriangleList:
+Triangle C|D|F: Area= 0.000, Edges= (F,D,3.000), (F,C,6.000), (D,C,3.000), Angles=(F,0.000), Altitude=(x=(F,3.000), H=(F,0.000))
+Triangle E|F|H: Area= 3.750, Edges= (F,H,2.915), (F,E,3.000), (H,E,2.915), Angles=(F,59.036), Altitude=(x=(F,1.372), H=(F,2.572))
+Triangle D|F|H: Area= 3.750, Edges= (F,H,2.915), (F,D,3.000), (H,D,2.915), Angles=(F,59.036), Altitude=(x=(F,1.372), H=(F,2.572))
+Triangle F|G|H: Area= 3.750, Edges= (F,H,2.915), (F,G,5.148), (H,G,3.000), Angles=(F,29.982), Altitude=(x=(F,1.500), H=(F,2.500))
+Triangle D|F|G: Area= 3.750, Edges= (F,D,3.000), (F,G,5.148), (D,G,2.915), Angles=(F,29.055), Altitude=(x=(F,1.543), H=(F,2.572))
+Triangle B|F|H: Area= 4.243, Edges= (F,H,2.915), (F,B,4.243), (H,B,2.915), Angles=(F,43.314), Altitude=(x=(F,0.171), H=(F,2.910))
+Triangle D|E|F: Area= 4.500, Edges= (F,E,3.000), (F,D,3.000), (E,D,4.243), Angles=(F,90.000), Altitude=(x=(F,2.121), H=(F,2.121))
+Triangle B|E|F: Area= 4.500, Edges= (F,E,3.000), (F,B,4.243), (E,B,3.000), Angles=(F,45.000), Altitude=(x=(F,0.000), H=(F,3.000))
+Triangle B|D|F: Area= 4.500, Edges= (F,D,3.000), (F,B,4.243), (D,B,3.000), Angles=(F,45.000), Altitude=(x=(F,0.000), H=(F,3.000))
+Triangle A|D|F: Area= 4.500, Edges= (F,D,3.000), (F,A,6.708), (D,A,4.243), Angles=(F,26.565), Altitude=(x=(F,2.121), H=(F,2.121))
+Triangle A|B|F: Area= 4.500, Edges= (F,B,4.243), (F,A,6.708), (B,A,3.000), Angles=(F,18.435), Altitude=(x=(F,3.000), H=(F,3.000))
+Triangle B|F|G: Area= 6.185, Edges= (F,B,4.243), (F,G,5.148), (B,G,2.915), Angles=(F,34.496), Altitude=(x=(F,0.000), H=(F,4.243))
+Triangle A|F|H: Area= 7.075, Edges= (F,H,2.915), (F,A,6.708), (H,A,5.148), Angles=(F,46.349), Altitude=(x=(F,0.971), H=(F,2.749))
+Triangle A|F|G: Area= 7.075, Edges= (F,G,5.148), (F,A,6.708), (G,A,2.915), Angles=(F,24.191), Altitude=(x=(F,1.715), H=(F,4.854))
+Triangle E|F|G: Area= 7.387, Edges= (F,E,3.000), (F,G,5.148), (E,G,5.148), Angles=(F,73.059), Altitude=(x=(F,0.874), H=(F,2.870))
+Triangle C|F|G: Area= 7.500, Edges= (F,G,5.148), (F,C,6.000), (G,C,2.915), Angles=(F,29.055), Altitude=(x=(F,0.171), H=(F,5.145))
+Triangle C|F|H: Area= 7.500, Edges= (F,H,2.915), (F,C,6.000), (H,C,5.148), Angles=(F,59.036), Altitude=(x=(F,0.097), H=(F,2.914))
+Triangle A|E|F: Area= 9.000, Edges= (F,E,3.000), (F,A,6.708), (E,A,6.000), Angles=(F,63.435), Altitude=(x=(F,0.000), H=(F,3.000))
+Triangle A|C|F: Area= 9.000, Edges= (F,C,6.000), (F,A,6.708), (C,A,3.000), Angles=(F,26.565), Altitude=(x=(F,0.000), H=(F,6.000))
+Triangle B|C|F: Area= 9.000, Edges= (F,B,4.243), (F,C,6.000), (B,C,4.243), Angles=(F,45.000), Altitude=(x=(F,0.000), H=(F,4.243))
+Triangle C|E|F: Area= 9.000, Edges= (F,E,3.000), (F,C,6.000), (E,C,6.708), Angles=(F,90.000), Altitude=(x=(F,1.342), H=(F,2.683))
+
+Opposite edges=(H,E,2.915), (H,D,2.915), (H,B,2.915), (D,G,2.915), (B,G,2.915), (G,C,2.915), (G,A,2.915), (H,G,3.000), (E,B,3.000), (D,B,3.000), (D,C,3.000), (B,A,3.000), (C,A,3.000), (E,D,4.243), (D,A,4.243), (B,C,4.243), (H,C,5.148), (H,A,5.148), (E,G,5.148), (E,A,6.000), (E,C,6.708) [:]
+
+Adjacent triangles of F:
+Edge ('F', 'H'):
+Triangle(E|F|H): x-coord=(H,2.915), map angle= 0.000 | xpos altitude=(E,1.372) | altitude height=(E,2.572) 
+Triangle(D|F|H): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(D,1.372) | altitude height=(D,2.572) 
+Triangle(F|G|H): x-coord=(X,0.000), map angle= 73.059 | xpos altitude=(G,1.543) | altitude height=(G,2.572) 
+Triangle(B|F|H): x-coord=(X,0.000), map angle= 45.000 | xpos altitude=(B,0.171) | altitude height=(B,2.910) 
+Triangle(A|F|H): x-coord=(X,0.000), map angle= 63.435 | xpos altitude=(A,1.715) | altitude height=(A,4.854) 
+Triangle(C|F|H): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(C,0.171) | altitude height=(C,5.145) 
+Edge ('F', 'E'):
+Triangle(E|F|H): x-coord=(E,3.000), map angle= 0.000 | xpos altitude=(H,1.500) | altitude height=(H,2.500) 
+Triangle(D|E|F): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(D,0.000) | altitude height=(D,3.000) 
+Triangle(B|E|F): x-coord=(X,0.000), map angle= 43.314 | xpos altitude=(B,0.000) | altitude height=(B,3.000) 
+Triangle(E|F|G): x-coord=(X,0.000), map angle= 29.982 | xpos altitude=(G,1.500) | altitude height=(G,4.924) 
+Triangle(A|E|F): x-coord=(X,0.000), map angle= 46.349 | xpos altitude=(A,0.000) | altitude height=(A,6.000) 
+Triangle(C|E|F): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(C,0.000) | altitude height=(C,6.000) 
+Edge ('F', 'D'):
+Triangle(C|D|F): x-coord=(D,3.000), map angle= 0.000 | xpos altitude=(C,3.000) | altitude height=(C,0.000) 
+Triangle(D|F|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(H,1.500) | altitude height=(H,2.500) 
+Triangle(D|F|G): x-coord=(X,0.000), map angle= 29.055 | xpos altitude=(G,1.500) | altitude height=(G,2.500) 
+Triangle(D|E|F): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(E,0.000) | altitude height=(E,3.000) 
+Triangle(B|D|F): x-coord=(X,0.000), map angle= 45.000 | xpos altitude=(B,0.000) | altitude height=(B,3.000) 
+Triangle(A|D|F): x-coord=(X,0.000), map angle= 26.565 | xpos altitude=(A,3.000) | altitude height=(A,3.000) 
+Edge ('F', 'B'):
+Triangle(B|F|H): x-coord=(B,4.243), map angle= 0.000 | xpos altitude=(H,2.121) | altitude height=(H,2.000) 
+Triangle(B|E|F): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(E,2.121) | altitude height=(E,2.121) 
+Triangle(B|D|F): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(D,2.121) | altitude height=(D,2.121) 
+Triangle(A|B|F): x-coord=(X,0.000), map angle= 46.349 | xpos altitude=(A,2.121) | altitude height=(A,2.121) 
+Triangle(B|F|G): x-coord=(X,0.000), map angle= 29.982 | xpos altitude=(G,0.000) | altitude height=(G,2.915) 
+Triangle(B|C|F): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(C,0.000) | altitude height=(C,4.243) 
+Edge ('F', 'G'):
+Triangle(F|G|H): x-coord=(G,5.148), map angle= 0.000 | xpos altitude=(H,2.525) | altitude height=(H,1.457) 
+Triangle(D|F|G): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(D,2.525) | altitude height=(D,1.457) 
+Triangle(B|F|G): x-coord=(X,0.000), map angle= 43.314 | xpos altitude=(B,1.651) | altitude height=(B,2.403) 
+Triangle(A|F|G): x-coord=(X,0.000), map angle= 46.349 | xpos altitude=(A,0.971) | altitude height=(A,2.749) 
+Triangle(E|F|G): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(E,0.874) | altitude height=(E,2.870) 
+Triangle(C|F|G): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(C,0.097) | altitude height=(C,2.914) 
+Edge ('F', 'C'):
+Triangle(C|D|F): x-coord=(C,6.000), map angle= 0.000 | xpos altitude=(D,3.000) | altitude height=(D,0.000) 
+Triangle(C|F|G): x-coord=(X,0.000), map angle= 29.055 | xpos altitude=(G,1.500) | altitude height=(G,2.500) 
+Triangle(C|F|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(H,1.500) | altitude height=(H,2.500) 
+Triangle(A|C|F): x-coord=(X,0.000), map angle= 26.565 | xpos altitude=(A,0.000) | altitude height=(A,3.000) 
+Triangle(B|C|F): x-coord=(X,0.000), map angle= 45.000 | xpos altitude=(B,3.000) | altitude height=(B,3.000) 
+Triangle(C|E|F): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(E,0.000) | altitude height=(E,3.000) 
+Edge ('F', 'A'):
+Triangle(A|D|F): x-coord=(A,6.708), map angle= 0.000 | xpos altitude=(D,2.683) | altitude height=(D,1.342) 
+Triangle(A|B|F): x-coord=(X,0.000), map angle= 45.000 | xpos altitude=(B,2.683) | altitude height=(B,1.342) 
+Triangle(A|F|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(H,2.012) | altitude height=(H,2.110) 
+Triangle(A|F|G): x-coord=(X,0.000), map angle= 29.055 | xpos altitude=(G,2.012) | altitude height=(G,2.110) 
+Triangle(A|E|F): x-coord=(X,0.000), map angle= 90.000 | xpos altitude=(E,1.342) | altitude height=(E,2.683) 
+Triangle(A|C|F): x-coord=(X,0.000), map angle= 0.000 | xpos altitude=(C,1.342) | altitude height=(C,2.683) 
+------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+Node uuid=G:(0, 0, 0) [:] Surrounding Nodes= C, D, B, A, H, F, E, Edgelist= (G,C,2.915), (G,D,2.915), (G,B,2.915), (G,A,2.915), (G,H,3.000), (G,F,5.148), (G,E,5.148)
+
+TriangleList:
+Triangle C|D|G: Area= 3.750, Edges= (G,C,2.915), (G,D,2.915), (C,D,3.000), Angles=(G,61.928), Altitude=(x=(G,1.500), H=(G,2.500))
+Triangle A|C|G: Area= 3.750, Edges= (G,C,2.915), (G,A,2.915), (C,A,3.000), Angles=(G,61.928), Altitude=(x=(G,1.500), H=(G,2.500))
+Triangle B|D|G: Area= 3.750, Edges= (G,D,2.915), (G,B,2.915), (D,B,3.000), Angles=(G,61.928), Altitude=(x=(G,1.500), H=(G,2.500))
+Triangle D|G|H: Area= 3.750, Edges= (G,D,2.915), (G,H,3.000), (D,H,2.915), Angles=(G,59.036), Altitude=(x=(G,1.372), H=(G,2.572))
+Triangle A|B|G: Area= 3.750, Edges= (G,B,2.915), (G,A,2.915), (B,A,3.000), Angles=(G,61.928), Altitude=(x=(G,1.500), H=(G,2.500))
+Triangle B|G|H: Area= 3.750, Edges= (G,B,2.915), (G,H,3.000), (B,H,2.915), Angles=(G,59.036), Altitude=(x=(G,1.372), H=(G,2.572))
+Triangle C|G|H: Area= 3.750, Edges= (G,C,2.915), (G,H,3.000), (C,H,5.148), Angles=(G,120.964), Altitude=(x=(G,2.525), H=(G,1.457))
+Triangle D|F|G: Area= 3.750, Edges= (G,D,2.915), (G,F,5.148), (D,F,3.000), Angles=(G,29.982), Altitude=(x=(G,1.500), H=(G,2.500))
+Triangle B|E|G: Area= 3.750, Edges= (G,B,2.915), (G,E,5.148), (B,E,3.000), Angles=(G,29.982), Altitude=(x=(G,1.500), H=(G,2.500))
+Triangle A|G|H: Area= 3.750, Edges= (G,A,2.915), (G,H,3.000), (A,H,5.148), Angles=(G,120.964), Altitude=(x=(G,2.525), H=(G,1.457))
+Triangle F|G|H: Area= 3.750, Edges= (G,H,3.000), (G,F,5.148), (H,F,2.915), Angles=(G,29.055), Altitude=(x=(G,1.543), H=(G,2.572))
+Triangle E|G|H: Area= 3.750, Edges= (G,H,3.000), (G,E,5.148), (H,E,2.915), Angles=(G,29.055), Altitude=(x=(G,1.543), H=(G,2.572))
+Triangle B|C|G: Area= 4.243, Edges= (G,C,2.915), (G,B,2.915), (C,B,4.243), Angles=(G,93.372), Altitude=(x=(G,2.121), H=(G,2.000))
+Triangle A|D|G: Area= 4.243, Edges= (G,D,2.915), (G,A,2.915), (D,A,4.243), Angles=(G,93.372), Altitude=(x=(G,2.121), H=(G,2.000))
+Triangle D|E|G: Area= 6.185, Edges= (G,D,2.915), (G,E,5.148), (D,E,4.243), Angles=(G,55.504), Altitude=(x=(G,0.000), H=(G,2.915))
+Triangle B|F|G: Area= 6.185, Edges= (G,B,2.915), (G,F,5.148), (B,F,4.243), Angles=(G,55.504), Altitude=(x=(G,0.000), H=(G,2.915))
+Triangle C|E|G: Area= 7.075, Edges= (G,C,2.915), (G,E,5.148), (C,E,6.708), Angles=(G,109.460), Altitude=(x=(G,2.012), H=(G,2.110))
+Triangle A|F|G: Area= 7.075, Edges= (G,A,2.915), (G,F,5.148), (A,F,6.708), Angles=(G,109.460), Altitude=(x=(G,2.012), H=(G,2.110))
+Triangle E|F|G: Area= 7.387, Edges= (G,F,5.148), (G,E,5.148), (F,E,3.000), Angles=(G,33.882), Altitude=(x=(G,1.500), H=(G,4.924))
+Triangle C|F|G: Area= 7.500, Edges= (G,C,2.915), (G,F,5.148), (C,F,6.000), Angles=(G,91.909), Altitude=(x=(G,1.500), H=(G,2.500))
+Triangle A|E|G: Area= 7.500, Edges= (G,A,2.915), (G,E,5.148), (A,E,6.000), Angles=(G,91.909), Altitude=(x=(G,1.500), H=(G,2.500))
+
+Opposite edges=(D,H,2.915), (B,H,2.915), (H,F,2.915), (H,E,2.915), (C,D,3.000), (C,A,3.000), (D,B,3.000), (D,F,3.000), (B,A,3.000), (B,E,3.000), (F,E,3.000), (C,B,4.243), (D,A,4.243), (D,E,4.243), (B,F,4.243), (C,H,5.148), (A,H,5.148), (C,F,6.000), (A,E,6.000), (C,E,6.708), (A,F,6.708) [:]
+
+Adjacent triangles of G:
+Edge ('G', 'C'):
+Triangle(C|D|G): x-coord=(C,2.915), map angle= 0.000 | xpos altitude=(D,1.372) | altitude height=(D,2.572) 
+Triangle(A|C|G): x-coord=(X,0.000), map angle= 93.372 | xpos altitude=(A,1.372) | altitude height=(A,2.572) 
+Triangle(C|G|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(H,1.543) | altitude height=(H,2.572) 
+Triangle(B|C|G): x-coord=(X,0.000), map angle= 61.928 | xpos altitude=(B,0.171) | altitude height=(B,2.910) 
+Triangle(C|E|G): x-coord=(X,0.000), map angle= 55.504 | xpos altitude=(E,1.715) | altitude height=(E,4.854) 
+Triangle(C|F|G): x-coord=(X,0.000), map angle= 29.982 | xpos altitude=(F,0.171) | altitude height=(F,5.145) 
+Edge ('G', 'D'):
+Triangle(C|D|G): x-coord=(D,2.915), map angle= 0.000 | xpos altitude=(C,1.372) | altitude height=(C,2.572) 
+Triangle(B|D|G): x-coord=(X,0.000), map angle= 93.372 | xpos altitude=(B,1.372) | altitude height=(B,2.572) 
+Triangle(D|G|H): x-coord=(X,0.000), map angle= 120.964 | xpos altitude=(H,1.372) | altitude height=(H,2.572) 
+Triangle(D|F|G): x-coord=(X,0.000), map angle= 91.909 | xpos altitude=(F,1.543) | altitude height=(F,2.572) 
+Triangle(A|D|G): x-coord=(X,0.000), map angle= 61.928 | xpos altitude=(A,0.171) | altitude height=(A,2.910) 
+Triangle(D|E|G): x-coord=(X,0.000), map angle= 109.460 | xpos altitude=(E,0.000) | altitude height=(E,4.243) 
+Edge ('G', 'B'):
+Triangle(B|D|G): x-coord=(B,2.915), map angle= 0.000 | xpos altitude=(D,1.372) | altitude height=(D,2.572) 
+Triangle(A|B|G): x-coord=(X,0.000), map angle= 93.372 | xpos altitude=(A,1.372) | altitude height=(A,2.572) 
+Triangle(B|G|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(H,1.372) | altitude height=(H,2.572) 
+Triangle(B|E|G): x-coord=(X,0.000), map angle= 55.504 | xpos altitude=(E,1.543) | altitude height=(E,2.572) 
+Triangle(B|C|G): x-coord=(X,0.000), map angle= 61.928 | xpos altitude=(C,0.171) | altitude height=(C,2.910) 
+Triangle(B|F|G): x-coord=(X,0.000), map angle= 29.982 | xpos altitude=(F,0.000) | altitude height=(F,4.243) 
+Edge ('G', 'A'):
+Triangle(A|C|G): x-coord=(A,2.915), map angle= 0.000 | xpos altitude=(C,1.372) | altitude height=(C,2.572) 
+Triangle(A|B|G): x-coord=(X,0.000), map angle= 93.372 | xpos altitude=(B,1.372) | altitude height=(B,2.572) 
+Triangle(A|G|H): x-coord=(X,0.000), map angle= 120.964 | xpos altitude=(H,1.543) | altitude height=(H,2.572) 
+Triangle(A|D|G): x-coord=(X,0.000), map angle= 61.928 | xpos altitude=(D,0.171) | altitude height=(D,2.910) 
+Triangle(A|F|G): x-coord=(X,0.000), map angle= 91.909 | xpos altitude=(F,1.715) | altitude height=(F,4.854) 
+Triangle(A|E|G): x-coord=(X,0.000), map angle= 109.460 | xpos altitude=(E,0.171) | altitude height=(E,5.145) 
+Edge ('G', 'H'):
+Triangle(D|G|H): x-coord=(H,3.000), map angle= 0.000 | xpos altitude=(D,1.500) | altitude height=(D,2.500) 
+Triangle(B|G|H): x-coord=(X,0.000), map angle= 61.928 | xpos altitude=(B,1.500) | altitude height=(B,2.500) 
+Triangle(C|G|H): x-coord=(X,0.000), map angle= 61.928 | xpos altitude=(C,1.500) | altitude height=(C,2.500) 
+Triangle(A|G|H): x-coord=(X,0.000), map angle= 93.372 | xpos altitude=(A,1.500) | altitude height=(A,2.500) 
+Triangle(F|G|H): x-coord=(X,0.000), map angle= 29.982 | xpos altitude=(F,1.500) | altitude height=(F,2.500) 
+Triangle(E|G|H): x-coord=(X,0.000), map angle= 55.504 | xpos altitude=(E,1.500) | altitude height=(E,2.500) 
+Edge ('G', 'F'):
+Triangle(D|F|G): x-coord=(F,5.148), map angle= 0.000 | xpos altitude=(D,2.525) | altitude height=(D,1.457) 
+Triangle(F|G|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(H,2.525) | altitude height=(H,1.457) 
+Triangle(B|F|G): x-coord=(X,0.000), map angle= 61.928 | xpos altitude=(B,1.651) | altitude height=(B,2.403) 
+Triangle(A|F|G): x-coord=(X,0.000), map angle= 93.372 | xpos altitude=(A,0.971) | altitude height=(A,2.749) 
+Triangle(E|F|G): x-coord=(X,0.000), map angle= 55.504 | xpos altitude=(E,0.874) | altitude height=(E,2.870) 
+Triangle(C|F|G): x-coord=(X,0.000), map angle= 61.928 | xpos altitude=(C,0.097) | altitude height=(C,2.914) 
+Edge ('G', 'E'):
+Triangle(B|E|G): x-coord=(E,5.148), map angle= 0.000 | xpos altitude=(B,2.525) | altitude height=(B,1.457) 
+Triangle(E|G|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(H,2.525) | altitude height=(H,1.457) 
+Triangle(D|E|G): x-coord=(X,0.000), map angle= 61.928 | xpos altitude=(D,1.651) | altitude height=(D,2.403) 
+Triangle(C|E|G): x-coord=(X,0.000), map angle= 93.372 | xpos altitude=(C,0.971) | altitude height=(C,2.749) 
+Triangle(E|F|G): x-coord=(X,0.000), map angle= 55.504 | xpos altitude=(F,0.874) | altitude height=(F,2.870) 
+Triangle(A|E|G): x-coord=(X,0.000), map angle= 61.928 | xpos altitude=(A,0.097) | altitude height=(A,2.914) 
+------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+Node uuid=H:(0, 0, 0) [:] Surrounding Nodes= D, B, E, F, G, C, A, Edgelist= (H,D,2.915), (H,B,2.915), (H,E,2.915), (H,F,2.915), (H,G,3.000), (H,C,5.148), (H,A,5.148)
+
+TriangleList:
+Triangle B|D|H: Area= 3.750, Edges= (H,D,2.915), (H,B,2.915), (D,B,3.000), Angles=(H,61.928), Altitude=(x=(H,1.500), H=(H,2.500))
+Triangle D|F|H: Area= 3.750, Edges= (H,D,2.915), (H,F,2.915), (D,F,3.000), Angles=(H,61.928), Altitude=(x=(H,1.500), H=(H,2.500))
+Triangle D|G|H: Area= 3.750, Edges= (H,D,2.915), (H,G,3.000), (D,G,2.915), Angles=(H,59.036), Altitude=(x=(H,1.372), H=(H,2.572))
+Triangle B|E|H: Area= 3.750, Edges= (H,B,2.915), (H,E,2.915), (B,E,3.000), Angles=(H,61.928), Altitude=(x=(H,1.500), H=(H,2.500))
+Triangle B|G|H: Area= 3.750, Edges= (H,B,2.915), (H,G,3.000), (B,G,2.915), Angles=(H,59.036), Altitude=(x=(H,1.372), H=(H,2.572))
+Triangle E|F|H: Area= 3.750, Edges= (H,E,2.915), (H,F,2.915), (E,F,3.000), Angles=(H,61.928), Altitude=(x=(H,1.500), H=(H,2.500))
+Triangle C|D|H: Area= 3.750, Edges= (H,D,2.915), (H,C,5.148), (D,C,3.000), Angles=(H,29.982), Altitude=(x=(H,1.500), H=(H,2.500))
+Triangle A|B|H: Area= 3.750, Edges= (H,B,2.915), (H,A,5.148), (B,A,3.000), Angles=(H,29.982), Altitude=(x=(H,1.500), H=(H,2.500))
+Triangle E|G|H: Area= 3.750, Edges= (H,E,2.915), (H,G,3.000), (E,G,5.148), Angles=(H,120.964), Altitude=(x=(H,2.525), H=(H,1.457))
+Triangle F|G|H: Area= 3.750, Edges= (H,F,2.915), (H,G,3.000), (F,G,5.148), Angles=(H,120.964), Altitude=(x=(H,2.525), H=(H,1.457))
+Triangle C|G|H: Area= 3.750, Edges= (H,G,3.000), (H,C,5.148), (G,C,2.915), Angles=(H,29.055), Altitude=(x=(H,1.543), H=(H,2.572))
+Triangle A|G|H: Area= 3.750, Edges= (H,G,3.000), (H,A,5.148), (G,A,2.915), Angles=(H,29.055), Altitude=(x=(H,1.543), H=(H,2.572))
+Triangle D|E|H: Area= 4.243, Edges= (H,D,2.915), (H,E,2.915), (D,E,4.243), Angles=(H,93.372), Altitude=(x=(H,2.121), H=(H,2.000))
+Triangle B|F|H: Area= 4.243, Edges= (H,B,2.915), (H,F,2.915), (B,F,4.243), Angles=(H,93.372), Altitude=(x=(H,2.121), H=(H,2.000))
+Triangle A|D|H: Area= 6.185, Edges= (H,D,2.915), (H,A,5.148), (D,A,4.243), Angles=(H,55.504), Altitude=(x=(H,0.000), H=(H,2.915))
+Triangle B|C|H: Area= 6.185, Edges= (H,B,2.915), (H,C,5.148), (B,C,4.243), Angles=(H,55.504), Altitude=(x=(H,0.000), H=(H,2.915))
+Triangle C|E|H: Area= 7.075, Edges= (H,E,2.915), (H,C,5.148), (E,C,6.708), Angles=(H,109.460), Altitude=(x=(H,2.012), H=(H,2.110))
+Triangle A|F|H: Area= 7.075, Edges= (H,F,2.915), (H,A,5.148), (F,A,6.708), Angles=(H,109.460), Altitude=(x=(H,2.012), H=(H,2.110))
+Triangle A|C|H: Area= 7.387, Edges= (H,C,5.148), (H,A,5.148), (C,A,3.000), Angles=(H,33.882), Altitude=(x=(H,1.500), H=(H,4.924))
+Triangle A|E|H: Area= 7.500, Edges= (H,E,2.915), (H,A,5.148), (E,A,6.000), Angles=(H,91.909), Altitude=(x=(H,1.500), H=(H,2.500))
+Triangle C|F|H: Area= 7.500, Edges= (H,F,2.915), (H,C,5.148), (F,C,6.000), Angles=(H,91.909), Altitude=(x=(H,1.500), H=(H,2.500))
+
+Opposite edges=(D,G,2.915), (B,G,2.915), (G,C,2.915), (G,A,2.915), (D,B,3.000), (D,F,3.000), (D,C,3.000), (B,E,3.000), (B,A,3.000), (E,F,3.000), (C,A,3.000), (D,E,4.243), (D,A,4.243), (B,F,4.243), (B,C,4.243), (E,G,5.148), (F,G,5.148), (E,A,6.000), (F,C,6.000), (E,C,6.708), (F,A,6.708) [:]
+
+Adjacent triangles of H:
+Edge ('H', 'D'):
+Triangle(B|D|H): x-coord=(D,2.915), map angle= 0.000 | xpos altitude=(B,1.372) | altitude height=(B,2.572) 
+Triangle(D|F|H): x-coord=(X,0.000), map angle= 93.372 | xpos altitude=(F,1.372) | altitude height=(F,2.572) 
+Triangle(D|G|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(G,1.372) | altitude height=(G,2.572) 
+Triangle(C|D|H): x-coord=(X,0.000), map angle= 55.504 | xpos altitude=(C,1.543) | altitude height=(C,2.572) 
+Triangle(D|E|H): x-coord=(X,0.000), map angle= 61.928 | xpos altitude=(E,0.171) | altitude height=(E,2.910) 
+Triangle(A|D|H): x-coord=(X,0.000), map angle= 29.982 | xpos altitude=(A,0.000) | altitude height=(A,4.243) 
+Edge ('H', 'B'):
+Triangle(B|D|H): x-coord=(B,2.915), map angle= 0.000 | xpos altitude=(D,1.372) | altitude height=(D,2.572) 
+Triangle(B|E|H): x-coord=(X,0.000), map angle= 93.372 | xpos altitude=(E,1.372) | altitude height=(E,2.572) 
+Triangle(B|G|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(G,1.372) | altitude height=(G,2.572) 
+Triangle(A|B|H): x-coord=(X,0.000), map angle= 55.504 | xpos altitude=(A,1.543) | altitude height=(A,2.572) 
+Triangle(B|F|H): x-coord=(X,0.000), map angle= 61.928 | xpos altitude=(F,0.171) | altitude height=(F,2.910) 
+Triangle(B|C|H): x-coord=(X,0.000), map angle= 29.982 | xpos altitude=(C,0.000) | altitude height=(C,4.243) 
+Edge ('H', 'E'):
+Triangle(B|E|H): x-coord=(E,2.915), map angle= 0.000 | xpos altitude=(B,1.372) | altitude height=(B,2.572) 
+Triangle(E|F|H): x-coord=(X,0.000), map angle= 93.372 | xpos altitude=(F,1.372) | altitude height=(F,2.572) 
+Triangle(E|G|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(G,1.543) | altitude height=(G,2.572) 
+Triangle(D|E|H): x-coord=(X,0.000), map angle= 61.928 | xpos altitude=(D,0.171) | altitude height=(D,2.910) 
+Triangle(C|E|H): x-coord=(X,0.000), map angle= 55.504 | xpos altitude=(C,1.715) | altitude height=(C,4.854) 
+Triangle(A|E|H): x-coord=(X,0.000), map angle= 29.982 | xpos altitude=(A,0.171) | altitude height=(A,5.145) 
+Edge ('H', 'F'):
+Triangle(D|F|H): x-coord=(F,2.915), map angle= 0.000 | xpos altitude=(D,1.372) | altitude height=(D,2.572) 
+Triangle(E|F|H): x-coord=(X,0.000), map angle= 93.372 | xpos altitude=(E,1.372) | altitude height=(E,2.572) 
+Triangle(F|G|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(G,1.543) | altitude height=(G,2.572) 
+Triangle(B|F|H): x-coord=(X,0.000), map angle= 61.928 | xpos altitude=(B,0.171) | altitude height=(B,2.910) 
+Triangle(A|F|H): x-coord=(X,0.000), map angle= 55.504 | xpos altitude=(A,1.715) | altitude height=(A,4.854) 
+Triangle(C|F|H): x-coord=(X,0.000), map angle= 29.982 | xpos altitude=(C,0.171) | altitude height=(C,5.145) 
+Edge ('H', 'G'):
+Triangle(D|G|H): x-coord=(G,3.000), map angle= 0.000 | xpos altitude=(D,1.500) | altitude height=(D,2.500) 
+Triangle(B|G|H): x-coord=(X,0.000), map angle= 61.928 | xpos altitude=(B,1.500) | altitude height=(B,2.500) 
+Triangle(E|G|H): x-coord=(X,0.000), map angle= 93.372 | xpos altitude=(E,1.500) | altitude height=(E,2.500) 
+Triangle(F|G|H): x-coord=(X,0.000), map angle= 61.928 | xpos altitude=(F,1.500) | altitude height=(F,2.500) 
+Triangle(C|G|H): x-coord=(X,0.000), map angle= 29.982 | xpos altitude=(C,1.500) | altitude height=(C,2.500) 
+Triangle(A|G|H): x-coord=(X,0.000), map angle= 55.504 | xpos altitude=(A,1.500) | altitude height=(A,2.500) 
+Edge ('H', 'C'):
+Triangle(C|D|H): x-coord=(C,5.148), map angle= 0.000 | xpos altitude=(D,2.525) | altitude height=(D,1.457) 
+Triangle(C|G|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(G,2.525) | altitude height=(G,1.457) 
+Triangle(B|C|H): x-coord=(X,0.000), map angle= 61.928 | xpos altitude=(B,1.651) | altitude height=(B,2.403) 
+Triangle(C|E|H): x-coord=(X,0.000), map angle= 93.372 | xpos altitude=(E,0.971) | altitude height=(E,2.749) 
+Triangle(A|C|H): x-coord=(X,0.000), map angle= 55.504 | xpos altitude=(A,0.874) | altitude height=(A,2.870) 
+Triangle(C|F|H): x-coord=(X,0.000), map angle= 61.928 | xpos altitude=(F,0.097) | altitude height=(F,2.914) 
+Edge ('H', 'A'):
+Triangle(A|B|H): x-coord=(A,5.148), map angle= 0.000 | xpos altitude=(B,2.525) | altitude height=(B,1.457) 
+Triangle(A|G|H): x-coord=(X,0.000), map angle= 59.036 | xpos altitude=(G,2.525) | altitude height=(G,1.457) 
+Triangle(A|D|H): x-coord=(X,0.000), map angle= 61.928 | xpos altitude=(D,1.651) | altitude height=(D,2.403) 
+Triangle(A|F|H): x-coord=(X,0.000), map angle= 93.372 | xpos altitude=(F,0.971) | altitude height=(F,2.749) 
+Triangle(A|C|H): x-coord=(X,0.000), map angle= 55.504 | xpos altitude=(C,0.874) | altitude height=(C,2.870) 
+Triangle(A|E|H): x-coord=(X,0.000), map angle= 61.928 | xpos altitude=(E,0.097) | altitude height=(E,2.914) 
+------------------------------------------------------------------------------------------------
+
