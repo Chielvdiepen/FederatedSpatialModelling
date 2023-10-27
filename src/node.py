@@ -6,7 +6,7 @@ import math
 import copy
 from mymath import yaw, roll, pitch
 import time
-from main import DIM2D, RSSI
+from config import DIM2D, RSSI, MAXTRIANGLES
 
 # Node class, which represents a individual Crownstone
 class Node:
@@ -160,7 +160,7 @@ class Node:
         return target_Node.adjMapSearch(searched_Edge)
 
     # Make a new triangle from the supplied edges and add it to the trianglist if it does not exist already, 
-    def addTriangle(self, edge1,edge2,common_edge, max_triangles):
+    def addTriangle(self, edge1,edge2,common_edge):
         temp = Triangle(edge1,edge2,common_edge)
         # check if triangle not already exist, false is not in list
         if self.checkTriangle(temp) == False and temp.area > 0.5:
@@ -198,7 +198,7 @@ class Node:
     # Creates a Triangle with self, dst1 and dst2, by making a requestNodeSearch() at dst1 for dst2, and at dst2 for dst1.
     # If there is mutual agreement, an edge between dst1 and dst2 will be made and stored in opposite edge list. 
     # The three edges will be added togheter to form a new triangle
-    def createTriangleWith(self, edge1, edge2, max_triangles):
+    def createTriangleWith(self, edge1, edge2):
         dst1, dst2 = edge1.dst, edge2.dst
         if self.compare(dst1) or self.compare(dst2):
             print(f"{self.uuid}: Can not make Triangle with itself")
@@ -211,23 +211,23 @@ class Node:
             return False
         if checkForDst2[0].compare(dst2) and checkForDst1[0].compare(dst1):
             common_edge = Edge(dst1,dst2,checkForDst1[1])
-            return self.addTriangle(edge1,edge2,common_edge, max_triangles)
+            return self.addTriangle(edge1,edge2,common_edge)
 
 
     # This procedure will walk all the nodes and will make N triangles. routine: iterate surnodes, make edge from first, add them to edgelist, 
     # check if edge sees other edge, if True, form edges and make triangle, add triangle to trianglelist
-    def triangleProcedure(self, max_triangles):
+    def triangleProcedure(self):
         surCount = len(self.SurNodes)
-        # self.triangleList = array(max_triangles) in C++ allocate array of max_triangles 
+        # self.triangleList = array(MAXTRIANGLES) in C++ allocate array of 
         for i in range(surCount):
             for j in range(i+1, surCount):
                 self.createEdgeWith(self.SurNodes[i]) # tuple(node,rssi)
                 self.createEdgeWith(self.SurNodes[j])
                 edgeP1 = self.checkEdge(self.SurNodes[i][0]) # search on dst node
                 edgeP2 = self.checkEdge(self.SurNodes[j][0]) 
-                self.createTriangleWith(edgeP1,edgeP2, max_triangles)
-                if len(self.triangleList) == max_triangles:
-                    # TODO: replace when lower weight, max_triangles
+                self.createTriangleWith(edgeP1,edgeP2)
+                if len(self.triangleList) == MAXTRIANGLES:
+                    # TODO: replace when lower weight
                     return
     
     # Links all triangles from trianglelist to individual edges from the edgelist, so edge(AB) has adj
@@ -451,15 +451,15 @@ class Node:
                         mapCoord.update({uuid:(remapped[0],remapped[1],remapped[2])})
 
     # init function, scan surroundings, make triangles
-    def init(self, network_edges, max_triangles):
+    def init(self, network_edges):
         self.scanSurroundings(network_edges)
         time.sleep(5)
-        self.triangleProcedure(max_triangles)
+        self.triangleProcedure()
         time.sleep(5)
 
     # main function, calls init first, for getting edges amd triangles, after: create adj triangles, map adjacents, make map, translate coords, print node info
-    def main(self, network_edges, max_triangles):
-        self.init(network_edges, max_triangles)
+    def main(self, network_edges):
+        self.init(network_edges)
         self.createAdjTriangles()
         self.mapAdjacents()
         time.sleep(5)

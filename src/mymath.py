@@ -2,7 +2,7 @@ import math
 import numpy as np
 from math import log10, sqrt
 from random import normalvariate
-from main import RSSI
+from config import RSSI
 
 # Convert the length between two coordinates to RSSI
 def distance_to_rssi(nodeCoord1, nodeCoord2):
