@@ -142,13 +142,11 @@ class Node:
         return False  
     
     # Internal triangle/opposite_edge search in all triangles of the trianglelist
-    # def adjMapSearch(self, baseEdge, thirdNodeUUID):
-    #     for adjTriangle in self.adjTrianglesDict[baseEdge]:
-    #         if adjTriangle.triangle.getLastNode(baseEdge) == thirdNodeUUID:
-    #             if adjTriangle.mapAngle == 0 
-    #             return 
-    #     return False
-    
+    def adjDictSearch(self, baseEdge, thirdNodeUUID):
+        for i, adj in enumerate(self.adjTrianglesDict[baseEdge]):
+            if thirdNodeUUID in adj.triangle.unique:
+                return adj, i
+                   
     # Triangle search request for target, should actually return the needed values instead of whole Triangle object
     def requestTriangleSearch(self, target_Node, searched_Edge):
         # send BLE message to target and wait for response
@@ -291,11 +289,19 @@ class Node:
             else:
                 return reqTri.altiX[1], reqTri.altiH # list(tuple(node,alti),tuple(node,alti))
     
-
+    def adjMapHelper(self, baseEdge, thirdNodeUUID):
+        adj, i = self.adjDictSearch(baseEdge, thirdNodeUUID)
+        if adj.mappedHeight == None:
+            coord = np.array([adj[i].basealtiX, adj[i].basealtiH, 0.000])    
+            mapped = np.dot(roll(self.adjTrianglesDict[baseEdge][i+1].mapAngle), coord)
+            return mapped
+        else:
+            return (adj.mapaltiX[1],adj.mapaltiH[1],adj.mappedHeight)
+        
     # Iterates on the adjacent triangles, set the first on XY/default and calculate for the following triangles the angle between default, altiX, altiH 
     def mapAdjacents(self):
         for base_edge, adj_list in self.adjTrianglesDict.items():
-            defaultOtherNode = adj_list[0].triangle.getLastNode(base_edge)
+            defaultOtherNode = adj_list[0].triangle.getLastNode(base_edge) #uuid
             selfAngle = adj_list[0].triangle.angle[1]  # tuple(node,angle)
             base_altiX, base_altiH = self.mapAltiRequest(defaultOtherNode,base_edge, selfAngle)
 
@@ -305,7 +311,7 @@ class Node:
                 adj_list[0].setAltiH(base_altiH)
                 adj_list[0].setAltiX(base_altiX)        
             for i in range(1,len(adj_list)):
-                otherNode = adj_list[i].triangle.getLastNode(base_edge)
+                otherNode = adj_list[i].triangle.getLastNode(base_edge) #uuid
                 selfAngle = adj_list[i].triangle.angle[1] # tuple(node,angle)
                 altiX, altiH = self.mapAltiRequest(otherNode,base_edge,selfAngle)
             
@@ -321,8 +327,8 @@ class Node:
                         print(f"{self.uuid}: mapAngle failed!")
                     else:
                         adj_list[i].setAngle(angle)
-                        newCoord = np.dot(roll(angle),np.array([altiX[1], altiH[1], 0.00]))
-                        adj_list[i].setMapHeight(newCoord[2])
+                        mapHeight = np.dot(roll(angle),np.array([altiX[1], altiH[1], 0.00]))
+                        adj_list[i].setMapHeight(mapHeight[2])
 
     # For each base_edge in the adjTrianglesDict, make a map of the coords and edges
     def makeMap(self):
@@ -466,5 +472,5 @@ class Node:
         self.makeMap()
         time.sleep(7)
         self.translateCoord()
-        time.sleep(7)
-        self.printNodeInfo()
+        # time.sleep(7)
+        # self.printNodeInfo()

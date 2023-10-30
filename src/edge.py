@@ -22,9 +22,4 @@ class Edge:
         return self.__hash__() == other.__hash__()
     
     def compare(self, other: object):
-        self_src_uuid, self_dst_uuid = self.src.uuid, self.dst.uuid
-        other_src_uuid, other_dst_uuid = other.src.uuid, other.dst.uuid
-
-        return ((self_src_uuid == other_src_uuid and self_dst_uuid == other_dst_uuid) or
-            (self_src_uuid == other_dst_uuid and self_dst_uuid == other_src_uuid)
-        )
+        return (self.src.uuid, self.dst.uuid) == (other.src.uuid, other.dst.uuid) or (self.src.uuid, self.dst.uuid) == (other.dst.uuid, other.src.uuid)

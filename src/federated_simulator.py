@@ -98,7 +98,7 @@ def initialize_nodes(RefNodeCoords, num_nodes, office_width, office_length, offi
 
     print("List of nodes:")
     for node in nodeList:
-        print(node)
+        print(node.uuid)
     print()
 
     return nodeList
@@ -125,7 +125,7 @@ def create_edges(nodeList, RefNodeCoords, RSSI, PLOT):
 def run_simulation(nodeList, NetworkEdges):
     thread_list = []
     for i in range(len(nodeList)):
-        thread = threading.Thread(target=nodeList[i].main, args=(NetworkEdges))
+        thread = threading.Thread(target=nodeList[i].main, args=(NetworkEdges, ))
         thread_list.append(thread)
         thread.start()
 

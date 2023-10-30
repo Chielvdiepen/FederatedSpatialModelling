@@ -6,8 +6,8 @@ class Adjacent:
         self.triangle = triangle
         self.mapAngle = 0
         self.otherCoord = (None,0)
-        self.basealtiX = (None,None)
-        self.basealtiH = (None,None)
+        self.basealtiX = None
+        self.basealtiH = None
         self.mappedHeight = None
 
     def __str__(self) -> str:

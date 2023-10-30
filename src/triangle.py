@@ -41,7 +41,13 @@ class Triangle:
     def getLastNode(self, base_edge: Edge):
         for node in self.nodes:
             if node != base_edge.src and node != base_edge.dst:
-                return node         
+                return node 
+
+    def getOtherBaseEdge(self, base_edge: Edge):
+        if self.edges[0].compare(base_edge):
+            return self.edges[1]
+        else:
+            return self.edges[0]      
 
     # Calculates the angle of the triangle from the node perspective corner     
     def getAngle(self): # ab0 ac1 bc2              

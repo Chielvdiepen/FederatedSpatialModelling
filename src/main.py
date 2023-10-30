@@ -9,6 +9,8 @@ if __name__ == "__main__":
 
     nodeA = nodeList[0]
 
+    nodeA.printNodeInfo()
+
     for (key, mapEdgeSet, mapCoords) in zip(nodeA.mapEdgeSetDict.keys(), nodeA.mapEdgeSetDict.values(), nodeA.transCoordsDict.values()):
         print(f'Base_edge {key}:')
         for coord in sorted(mapCoords.items()):
