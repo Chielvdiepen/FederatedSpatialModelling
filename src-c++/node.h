@@ -19,6 +19,17 @@ class Node {
 
 public:
     Node(const std::string& HWuuid);
+    std::string uuid;
+    std::tuple<double, double, double> coord;
+    std::vector<std::pair<Node*, double>> SurNodes;
+    std::vector<Edge> adjEdgeList;
+    std::vector<Edge> oppEdgeList;
+    std::vector<Triangle> triangleList;
+    std::map<Edge, std::vector<Adjacent>> adjTrianglesDict;
+    std::map<Edge, std::map<std::string, std::tuple<double, double, double>>> mapCoordsDict;
+    std::map<Edge, std::vector<Edge>> mapEdgeSetDict;
+    std::map<Edge, std::map<std::string, std::tuple<double, double, double>>> mappingDict;
+    std::map<Edge, std::map<std::string, std::tuple<double, double, double>>> transCoordsDict;
     std::string GetUUID() const;
     void PrintNodeInfo() const;
     void ScanSurroundings(const std::map<std::string, std::vector<Edge>>& networkEdges);
@@ -44,17 +55,7 @@ public:
     void Main(const std::map<std::string, std::vector<Edge>>& networkEdges);
 
 private:
-    std::string uuid;
-    std::tuple<double, double, double> coord;
-    std::vector<std::pair<Node*, double>> SurNodes;
-    std::vector<Edge> adjEdgeList;
-    std::vector<Edge> oppEdgeList;
-    std::vector<Triangle> triangleList;
-    std::map<Edge, std::vector<Adjacent>> adjTrianglesDict;
-    std::map<Edge, std::map<std::string, std::tuple<double, double, double>>> mapCoordsDict;
-    std::map<Edge, std::vector<Edge>> mapEdgeSetDict;
-    std::map<Edge, std::map<std::string, std::tuple<double, double, double>>> mappingDict;
-    std::map<Edge, std::map<std::string, std::tuple<double, double, double>>> transCoordsDict;
+
 };
 
 #endif  // NODE_H
