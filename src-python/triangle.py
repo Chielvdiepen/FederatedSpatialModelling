@@ -36,6 +36,12 @@ class Triangle:
             if edge.compare(edge_to_check):
                 return True
         return False
+    
+    def getEdge(self, edge_to_check: Edge):
+        for i, edge in enumerate(self.edges):
+            if edge.compare(edge_to_check):
+                return edge
+        return None
 
     # Returns the last node spanning the triangle, based on the base_edge src and dst node
     def getLastNode(self, base_edge: Edge):
