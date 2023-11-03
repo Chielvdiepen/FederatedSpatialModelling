@@ -1,5 +1,5 @@
 from edge import Edge
-import math
+from math import sqrt
 import numpy as np
 
 # triangles are stored locally and node specific, iow: edge are in the orientation of the node, ab, ac, bc
@@ -19,7 +19,7 @@ class Triangle:
 
     def __str__(self) -> str:
         edges_str = ', '.join(map(str, self.edges))
-        return f"Triangle {self.ID}: Area= {self.area:.3f}, Contribution= {self.contribution:.3f}, Edges= {edges_str}, Angles=({self.angle[0]},{self.angle[1]:.3f}), Altitude=(x=[(To {self.altiX[0][0]},{self.altiX[0][1]:.3f}),(To {self.altiX[1][0]},{self.altiX[1][1]:.3f})], H=({self.altiH[0]},{self.altiH[1]:.3f}))"
+        return f"Triangle {self.ID}: Area= {self.area:.3f}, Contribution= {self.contribution:.3f}, Edges= {edges_str}, Angles=({self.angle[0]},{self.angle[1]:.3f}), Altitude=(x=[(To {self.altiX[0][0]},{self.altiX[0][1]:.3f}),(To {self.altiX[1][0]},{self.altiX[1][1]:.3f})], H=[{self.altiH[0]},{self.altiH[1]:.3f}])"
     
     def __repr__(self):
         return str(self)
@@ -37,8 +37,9 @@ class Triangle:
                 return True
         return False
     
+    # Returns the edge_to_check if it is in the triangle
     def getEdge(self, edge_to_check: Edge):
-        for i, edge in enumerate(self.edges):
+        for edge in self.edges:
             if edge.compare(edge_to_check):
                 return edge
         return None
@@ -47,13 +48,13 @@ class Triangle:
     def getLastNode(self, base_edge: Edge):
         for node in self.nodes:
             if node != base_edge.src and node != base_edge.dst:
-                return node 
+                return node
 
     def getOtherBaseEdge(self, base_edge: Edge):
         if self.edges[0].compare(base_edge):
             return self.edges[1]
         else:
-            return self.edges[0]      
+            return self.edges[0]               
 
     # Calculates the angle of the triangle from the node perspective corner     
     def getAngle(self): # ab0 ac1 bc2              
@@ -76,7 +77,7 @@ class Triangle:
         # check if nodes are inline -> angle 0 or 180
         if div < 0: 
             div = 0
-        return math.sqrt(div) 
+        return sqrt(div) 
 
     # Calculates the altitude height of the triangle from node perspective with Heron's formula, see getArea() 
     # for example: self = A, ABC got edge ab,ac,bc -> altitude height is from corner A to side bc       
@@ -96,8 +97,8 @@ class Triangle:
         divB = ab_squared - hA_squared
         divC = ac_squared - hA_squared
 
-        divB = math.sqrt(max(divB, 0))
-        divC = math.sqrt(max(divC, 0))
+        divB = sqrt(max(divB, 0))
+        divC = sqrt(max(divC, 0))
 
         return [
             (self.edges[0].dst.uuid, divB),

@@ -2,11 +2,11 @@ from edge import Edge
 from triangle import Triangle
 from adjacent import Adjacent
 import numpy as np
-import math
+from math import sqrt
 import copy
-from mymath import yaw, roll, pitch
+from mymath import yaw, roll, pitch, mirrorY, mirrorZ
 import time
-from config import DIM2D, RSSI, MAXTRIANGLES
+from config import RSSI, MAXTRIANGLES
 
 # Node class, which represents a individual Crownstone
 class Node:
@@ -59,8 +59,8 @@ class Node:
         print('\nFor each map, the translations:')
         for edge, mapping in self.mappingDict.items():
             print(f'Base Edge {edge}:')
-            for uuid, translation in mapping.items():
-                print(f"Node {uuid}: Factor= {translation[0]:.3f} Angle= {translation[1]:.3f}, MapAngle= {translation[2]:.3f}")
+            for uuid, rotations in mapping.items():
+                print(f"Node {uuid}: Rotations = {rotations}")
             print()
 
         print('\nAfter translation:')
@@ -143,9 +143,10 @@ class Node:
     
     # Internal triangle/opposite_edge search in all triangles of the trianglelist
     def adjDictSearch(self, baseEdge, thirdNodeUUID):
-        for i, adj in enumerate(self.adjTrianglesDict[baseEdge]):
+        for adj in self.adjTrianglesDict[baseEdge]:
             if thirdNodeUUID in adj.triangle.unique:
-                return adj, i
+                return adj
+        return None
                    
     # Triangle search request for target, should actually return the needed values instead of whole Triangle object
     def requestTriangleSearch(self, target_Node, searched_Edge):
@@ -165,8 +166,8 @@ class Node:
             self.oppEdgeList.append(common_edge)
             self.oppEdgeList.sort(key=lambda x: x.rssi,reverse=RSSI)
             self.triangleList.append(temp)
-            # self.triangleList.sort(key=lambda x: x.contribution, reverse=True)
-            self.triangleList.sort(key=lambda x: x.area, reverse=False)
+            self.triangleList.sort(key=lambda x: x.contribution, reverse=True)
+            # self.triangleList.sort(key=lambda x: x.area, reverse=False)
             return True
         else:
             # print("Duplicate!")
@@ -216,7 +217,6 @@ class Node:
     # check if edge sees other edge, if True, form edges and make triangle, add triangle to trianglelist
     def triangleProcedure(self):
         surCount = len(self.SurNodes)
-        # self.triangleList = array(MAXTRIANGLES) in C++ allocate array of 
         for i in range(surCount):
             for j in range(i+1, surCount):
                 self.createEdgeWith(self.SurNodes[i]) # tuple(node,rssi)
@@ -257,19 +257,20 @@ class Node:
             reqTri = self.createTempTriangle(defaultOtherNode,otherNode)
             if reqTri == False:
                 return None
-            
+   
         nodeDist = reqTri.edges[2].dist
         deltaX = abs(base_altiX - altiX)
         pyth = max(0, nodeDist**2 - deltaX**2)
 
-        translation = math.sqrt(pyth)
+        translation = sqrt(pyth)
         a, b, c = translation, base_altiH, altiH
         p = max(-1, min(1, (b**2 + c**2 - a**2) / (2 * b * c)))
         mapAngle = np.rad2deg(np.arccos(p)) 
         return mapAngle
     
 
-    # Requests altitude position and height from the askNode, for example: you are A in triangle ABC, base_edge AB, askNode C, check if it has triangle with the values for altitude information 
+    # Requests altitude position and height from the askNode
+    # for example: you are A in triangle ABC, base_edge AB, askNode C, check if it has triangle with the values for altitude information 
     def mapAltiRequest(self, askNode, base_edge, self_angle):
         reqTri = self.requestTriangleSearch(askNode, base_edge)
         if reqTri == False:
@@ -289,19 +290,19 @@ class Node:
             else:
                 return reqTri.altiX[1], reqTri.altiH # list(tuple(node,alti),tuple(node,alti))
     
-    def adjMapHelper(self, baseEdge, thirdNodeUUID):
-        adj, i = self.adjDictSearch(baseEdge, thirdNodeUUID)
-        if adj.mappedHeight == None:
-            coord = np.array([adj[i].basealtiX, adj[i].basealtiH, 0.000])    
-            mapped = np.dot(roll(self.adjTrianglesDict[baseEdge][i+1].mapAngle), coord)
-            return mapped
-        else:
-            return (adj.mapaltiX[1],adj.mapaltiH[1],adj.mappedHeight)
-        
+    def adjMapHelper(self, baseEdge, baseNode, thirdNode):
+        adj_base = self.adjDictSearch(baseEdge, baseNode.uuid)
+        adj      = self.adjDictSearch(baseEdge, thirdNode.uuid)
+        if adj != None:
+            coord = np.array([adj.basealtiX[1], adj.basealtiH[1], 0.000])    
+            angle = self.getMapAngle(baseNode,thirdNode,adj_base.basealtiX[1],adj.basealtiX[1],adj_base.basealtiH[1],adj.basealtiH[1])
+            mapped = np.dot(roll(angle), coord)
+            return (mapped[0],mapped[1],mapped[2])
+
     # Iterates on the adjacent triangles, set the first on XY/default and calculate for the following triangles the angle between default, altiX, altiH 
     def mapAdjacents(self):
         for base_edge, adj_list in self.adjTrianglesDict.items():
-            defaultOtherNode = adj_list[0].triangle.getLastNode(base_edge) #uuid
+            defaultOtherNode = adj_list[0].triangle.getLastNode(base_edge)
             selfAngle = adj_list[0].triangle.angle[1]  # tuple(node,angle)
             base_altiX, base_altiH = self.mapAltiRequest(defaultOtherNode,base_edge, selfAngle)
 
@@ -311,7 +312,7 @@ class Node:
                 adj_list[0].setAltiH(base_altiH)
                 adj_list[0].setAltiX(base_altiX)        
             for i in range(1,len(adj_list)):
-                otherNode = adj_list[i].triangle.getLastNode(base_edge) #uuid
+                otherNode = adj_list[i].triangle.getLastNode(base_edge)
                 selfAngle = adj_list[i].triangle.angle[1] # tuple(node,angle)
                 altiX, altiH = self.mapAltiRequest(otherNode,base_edge,selfAngle)
             
@@ -327,35 +328,66 @@ class Node:
                         print(f"{self.uuid}: mapAngle failed!")
                     else:
                         adj_list[i].setAngle(angle)
-                        mapHeight = np.dot(roll(angle),np.array([altiX[1], altiH[1], 0.00]))
-                        adj_list[i].setMapHeight(mapHeight[2])
-
-    # For each base_edge in the adjTrianglesDict, make a map of the coords and edges
+                        newCoord = np.dot(roll(angle),np.array([altiX[1], altiH[1], 0.00]))
+                        adj_list[i].setMapHeight((newCoord[0],newCoord[1],newCoord[2]))
+  
+    # MakeMap of coords with a check from the other edge of the base triangle and a tetraeder node distance check
     def makeMap(self):
+
+        def calc_distance(coord1, coord2):
+            return sqrt((coord1[0]-coord2[0])**2 + (coord1[1]-coord2[1])**2 + (coord1[2]-coord2[2])**2)
+
         for base_edge, adjList in self.adjTrianglesDict.items():
 
-            mapCoords = {self.uuid: self.coord,}
-            mapEdgeSet = [] 
-
-            baseLength = base_edge.dist
+            mapEdgeSet = []
             mapping = {base_edge.src.uuid:(1,0,0), base_edge.dst.uuid:(1,0,0),}
+
+            baseTriangle = adjList[0].triangle
+
+            mapCoords = {self.uuid: self.coord, 
+                base_edge.dst.uuid:(adjList[0].otherCoord[1],0.000,0.000), 
+                baseTriangle.getLastNode(base_edge).uuid:(adjList[0].basealtiX[1],adjList[0].basealtiH[1],0.000), }
             
+            lastNode = self
             # go over all triangles and place the coords on the x-axis and rotate, also make list of all edges from all adj triangles
             for i, adj in enumerate(adjList):
                 if i == 0:
-                    mapCoords.update({adj.otherCoord[0]:(adj.otherCoord[1],0.000,0.000)})
-                
-                if adj.triangle.edges[0].compare(base_edge):
-                    compareEdge = adj.triangle.edges[1]
-                else: 
-                    compareEdge = adj.triangle.edges[0]
+                    continue
+               
+                thirdNode = adj.triangle.getLastNode(base_edge)
+                otherBaseEdge = baseTriangle.getOtherBaseEdge(base_edge)
+                mapped = self.adjMapHelper(otherBaseEdge, base_edge.dst, thirdNode)
 
-                point = np.array([adj.basealtiX[1], adj.basealtiH[1], 0.000])    
-                remapped = np.dot(roll(adj.mapAngle), point)
-                
-                mapCoords.update({adj.basealtiH[0]:(remapped[0],remapped[1],remapped[2])})
+                if round(mapped[0],3) == round(adj.mappedHeight[0],3) and round(mapped[1],3) == round(adj.mappedHeight[1],3) and round(mapped[2],3) == round(adj.mappedHeight[2],3):
+                    mapCoords.update({thirdNode.uuid:(mapped[0],mapped[1],mapped[2])})
+                else:
+                    remapped = np.dot(yaw(baseTriangle.angle[1]), mapped)
+                    if round(remapped[0],3) == round(adj.mappedHeight[0],3) and round(remapped[1],3) == round(adj.mappedHeight[1],3) and round(remapped[2],3) == round(adj.mappedHeight[2],3):
+                        distance = calc_distance(mapCoords[lastNode.uuid],remapped)
+                        edge_dist = self.triangleSearch(Edge(lastNode,adj.triangle.getLastNode(base_edge),0)).getEdge(Edge(lastNode,adj.triangle.getLastNode(base_edge),0)).dist
+                        if round(edge_dist,3) == round(distance,3):
+                            mapCoords.update({thirdNode.uuid:(remapped[0],remapped[1],remapped[2])})
+                        else:
+                            remapped = np.dot(mirrorZ(), remapped)
+                            mapCoords.update({thirdNode.uuid:(remapped[0],remapped[1],remapped[2])})
+                    else:
+                        remapped = np.dot(yaw(-baseTriangle.angle[1]), remapped)
+                        remapped = np.dot(mirrorY(), remapped)
+                        remapped = np.dot(yaw(baseTriangle.angle[1]), remapped)
+                        if round(remapped[0],3) == round(adj.mappedHeight[0],3) and round(remapped[1],3) == round(adj.mappedHeight[1],3) and round(remapped[2],3) == round(adj.mappedHeight[2],3):
+                            distance = calc_distance(mapCoords[lastNode.uuid],remapped)
+                            edge_dist = self.triangleSearch(Edge(lastNode,adj.triangle.getLastNode(base_edge),0)).getEdge(Edge(lastNode,adj.triangle.getLastNode(base_edge),0)).dist
+                            if round(edge_dist,3) == round(distance,3):
+                                mapCoords.update({thirdNode.uuid:(remapped[0],remapped[1],remapped[2])})
+                            else:
+                                remapped = np.dot(mirrorZ(), remapped)
+                                mapCoords.update({thirdNode.uuid:(remapped[0],remapped[1],remapped[2])})
+                        else:
+                            mapCoords.update({thirdNode.uuid:(0,0,0)})
+
+                mapping.update({base_edge.dst.uuid:("list of rotations")})
                 mapEdgeSet.extend(edge for edge in adj.triangle.edges if not any(edge.compare(existing_edge) for existing_edge in mapEdgeSet))
-                mapping.update({compareEdge.dst.uuid:((baseLength/compareEdge.dist),adj.triangle.angle[1],adj.mapAngle)}) # np.rad2deg(np.tan(remapped[2]/remapped[0]))
+                lastNode = thirdNode
             
             self.mapCoordsDict.update({base_edge.id: mapCoords})
             self.mapEdgeSetDict.update({base_edge.id: mapEdgeSet})
@@ -367,94 +399,20 @@ class Node:
         translations = self.mappingDict[self.adjEdgeList[0]]
         self.transCoordsDict = copy.deepcopy(self.mapCoordsDict)
 
-        # looprange = range(0,360,1)
-        # looprange = range(90,271,90)
-        looprange = range(180,360,180)
-
         for base_edge, mapCoord in self.transCoordsDict.items():
-            r, angle, map = translations[base_edge[1]]
+            # rotlist = translations[base_edge]
             for uuid, coord in mapCoord.items():
                 remapped = np.array([coord[0], coord[1],coord[2]]) 
+                # remapped = np.dot(yaw(angle), remapped)
+                # remapped = np.dot(roll(map), remapped)
 
-                remapped = np.dot(yaw(angle), remapped)
-                remapped = np.dot(roll(map), remapped)
-
-                # mapCoord.update({uuid:(remapped[0],remapped[1],remapped[2])})
-                
                 # match the coord with the first map, working for 2D, tryout for 3D
                 base_coords = self.transCoordsDict[self.adjEdgeList[0]]
-                if DIM2D == True:
-                    if round(remapped[0],3) == round(base_coords[uuid][0],3) and round(remapped[1],3) == round(base_coords[uuid][1],3) and round(remapped[2],3) == round(base_coords[uuid][2],3):
-                        mapCoord.update({uuid:(remapped[0],remapped[1],remapped[2])})
-                    else:
-                        remapped = np.dot(yaw(-angle), remapped)
-                        remapped = np.dot(roll(180), remapped)
-                        remapped = np.dot(yaw(angle), remapped)
-                        if round(remapped[0],3) == round(base_coords[uuid][0],3) and round(remapped[1],3) == round(base_coords[uuid][1],3) and round(remapped[2],3) == round(base_coords[uuid][2],3):
-                            mapCoord.update({uuid:(remapped[0],remapped[1],remapped[2])})
-                        else:
-                            remapped = np.dot(yaw(-angle), remapped)
-                            remapped = np.dot(roll(-180), remapped)
-                            remapped = np.dot(yaw(angle), remapped)
-                            remapped = np.dot(roll(180), remapped)
-                            if round(remapped[0],3) == round(base_coords[uuid][0],3) and round(remapped[1],3) == round(base_coords[uuid][1],3) and round(remapped[2],3) == round(base_coords[uuid][2],3):
-                                mapCoord.update({uuid:(remapped[0],remapped[1],remapped[2])})
-                            else:
-                                remapped = np.dot(roll(-180), remapped)
-                                # back to original
-                                mapCoord.update({uuid:(remapped[0],remapped[1],remapped[2])})
-                                # mapCoord.update({uuid:(0,0,0)})
+                if round(remapped[0],3) == round(base_coords[uuid][0],3) and round(remapped[1],3) == round(base_coords[uuid][1],3) and round(remapped[2],3) == round(base_coords[uuid][2],3):
+                    mapCoord.update({uuid:(remapped[0],remapped[1],remapped[2])})
                 else:
-                    if round(remapped[0],3) == round(base_coords[uuid][0],3) and round(remapped[1],3) == round(base_coords[uuid][1],3) and round(remapped[2],3) == round(base_coords[uuid][2],3):
-                        mapCoord.update({uuid:(remapped[0],remapped[1],remapped[2])})
-                    else:
-                        for i in looprange:
-                            remapped = np.dot(yaw(-angle), remapped)
-                            remapped = np.dot(roll(i), remapped)
-                            remapped = np.dot(yaw(angle), remapped)
-                            if round(remapped[0],3) == round(base_coords[uuid][0],3) and round(remapped[1],3) == round(base_coords[uuid][1],3) and round(remapped[2],3) == round(base_coords[uuid][2],3):
-                                mapCoord.update({uuid:(remapped[0],remapped[1],remapped[2])})
-                                break
-                            else:
-                                remapped = np.dot(yaw(-angle), remapped)
-                                remapped = np.dot(roll(-i), remapped)
-                                remapped = np.dot(yaw(angle), remapped)
+                    mapCoord.update({uuid:(0,0,0)})
 
-                        for i in looprange:
-                            remapped = np.dot(roll(i), remapped)
-                            if round(remapped[0],3) == round(base_coords[uuid][0],3) and round(remapped[1],3) == round(base_coords[uuid][1],3) and round(remapped[2],3) == round(base_coords[uuid][2],3):
-                                mapCoord.update({uuid:(remapped[0],remapped[1],remapped[2])})
-                                break
-                            else:
-                                remapped = np.dot(roll(-i), remapped)
-
-                        # change coord map angle to opposite side
-                        remapped = np.dot(yaw(-angle), remapped)
-                        remapped = np.dot(roll(-map), remapped)
-                        remapped = np.dot(roll(-map), remapped)
-                        remapped = np.dot(yaw(angle), remapped)
-
-                        for i in looprange:
-                            remapped = np.dot(yaw(-angle), remapped)
-                            remapped = np.dot(roll(i), remapped)
-                            remapped = np.dot(yaw(angle), remapped)
-                            if round(remapped[0],3) == round(base_coords[uuid][0],3) and round(remapped[1],3) == round(base_coords[uuid][1],3) and round(remapped[2],3) == round(base_coords[uuid][2],3):
-                                mapCoord.update({uuid:(remapped[0],remapped[1],remapped[2])})
-                                break
-                            else:
-                                remapped = np.dot(yaw(-angle), remapped)
-                                remapped = np.dot(roll(-i), remapped)
-                                remapped = np.dot(yaw(angle), remapped)
-
-                        for i in looprange:
-                            remapped = np.dot(roll(i), remapped)
-                            if round(remapped[0],3) == round(base_coords[uuid][0],3) and round(remapped[1],3) == round(base_coords[uuid][1],3) and round(remapped[2],3) == round(base_coords[uuid][2],3):
-                                mapCoord.update({uuid:(remapped[0],remapped[1],remapped[2])})
-                                break
-                            else:
-                                remapped = np.dot(roll(-i), remapped)
-                        
-                        mapCoord.update({uuid:(remapped[0],remapped[1],remapped[2])})
 
     # init function, scan surroundings, make triangles
     def init(self, network_edges):
@@ -472,5 +430,5 @@ class Node:
         self.makeMap()
         time.sleep(7)
         self.translateCoord()
-        # time.sleep(7)
-        # self.printNodeInfo()
+        time.sleep(7)
+        self.printNodeInfo()

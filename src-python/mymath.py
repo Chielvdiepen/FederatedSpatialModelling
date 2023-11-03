@@ -45,3 +45,21 @@ def yaw(psi):
     return np.array([[np.cos(psi), -np.sin(psi), 0],
                     [np.sin(psi), np.cos(psi), 0],
                     [0, 0, 1]])
+
+# Mirror X coord by placing mirror in YZ plane
+def mirrorX():
+    return np.array([[-1, 0, 0],
+                     [ 0, 1, 0],
+                     [ 0, 0, 1]])
+
+# Mirror Y coord by placing mirror in XZ plane
+def mirrorY():
+    return np.array([[1, 0, 0],
+                     [0,-1, 0],
+                     [0, 0, 1]])
+
+# Mirror Z coord by placing mirror in XY plane
+def mirrorZ():
+    return np.array([[1, 0, 0],
+                     [0, 1, 0],
+                     [0, 0,-1]])
