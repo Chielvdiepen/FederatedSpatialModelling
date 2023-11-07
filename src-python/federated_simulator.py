@@ -97,9 +97,8 @@ def initialize_nodes(RefNodeCoords, num_nodes, office_width, office_length, offi
         RefNodeCoords = coordlist
 
     print("List of nodes:")
-    for node in nodeList:
-        print(node.uuid)
-    print()
+    edge_str = ', '.join(str(node.uuid) for node in nodeList)
+    print(edge_str+'\n')
 
     return nodeList
 
