@@ -19,12 +19,11 @@ float Triangle::getArea() {
 	float a = opposite_edge->distance;
     float b = adj_edge->distance;
     float c = base_edge->distance;
+
     float s = (a + b + c) / 2;
     float div = s * (s - a) * (s - b) * (s - c);
-    if(div < 0){
-        div = 0;
-    }
-    return std::sqrt(div);
+
+    return std::sqrt(max(div,0));
 }
 
 /**
@@ -36,14 +35,10 @@ float Triangle::getAngle() {
 	float a = opposite_edge->distance;
     float b = adj_edge->distance;
     float c = base_edge->distance;
+
 	float p = (std::pow(b,2) + std::pow(c,2) - std::pow(a,2)) / (2 * b * c);
-    if(p < -1.0){
-		p = -1.0;
-	}
-	if(p > 1.0){
-		p = 1.0;
-	}
-	return std::acos(p) * (180 / M_PI);
+
+	return std::acos(clamp(p,-1,1)) * (180 / M_PI);
 }
 
 /**
@@ -74,11 +69,7 @@ float Triangle::getAlitudeBasePositionTo(stone_id_t targetID) {
 		basePositionX = std::pow(adj_edge->distance,2) - hASquared;
 	}
 
-	if(basePositionX < 0){
-		basePositionX = 0.0;
-	}
-
-    return basePositionX;
+    return max(basePositionX,0);
 }
 
 /**
@@ -123,4 +114,19 @@ Edge* Triangle::getEdge(stone_id_t source, stone_id_t target) {
 		return opposite_edge;
 	}
 	return nullptr;
+}
+
+template <class T, class S>
+auto min(T l, S r) {
+	return l < r ? l : r;
+}
+
+template <class T, class S>
+auto max(T l, S r) {
+	return l > r ? l : r;
+}
+
+template <class V, class L, class U>
+auto clamp(V value, L lower, U upper) {
+	return min(max(value, lower), upper);
 }

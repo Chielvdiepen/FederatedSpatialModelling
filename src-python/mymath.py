@@ -11,7 +11,7 @@ def distance_to_rssi(nodeCoord1, nodeCoord2):
     distance = sqrt((c1x-c2x)**2 + (c1y-c2y)**2 + (c1z-c2z)**2)
     # noise = normalvariate(0, sqrt(20))
     noise = 0
-    rssi = -70 - 10 * 2.0 * log10(distance) + noise
+    rssi = -69.1 - 10 * 2.05 * log10(distance) + noise
     if RSSI:
         return rssi
     else:
@@ -21,7 +21,7 @@ def distance_to_rssi(nodeCoord1, nodeCoord2):
 # Convert RSSI into distance, for now a log function or later try neural net conversion
 def rssi_to_distance(rssi):
     if RSSI:
-        return (10**((-rssi-70)/(20)))
+        return (10**((-69.1-rssi)/(10*2.05)))
     else:
         return rssi
 
