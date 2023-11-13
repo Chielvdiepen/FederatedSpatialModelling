@@ -1,11 +1,11 @@
 #include "adjacent.h"
 
-Adjacent::Adjacent(const Triangle& triangle) : triangle(triangle) {
+Adjacent::Adjacent(const Triangle &triangle) : triangle(triangle) {
     mapAngle = 0.0;
-    otherCoord = std::make_pair(0.0, 0.0);
-    basealtiX = std::make_pair(0, 0.0);
-    basealtiH = std::make_pair(0, 0.0);
-    mappedHeight = 0.0;
+    otherCoord = std::make_pair(NULL, NULL);
+    basealtiX = std::make_pair(NULL, NULL);
+    basealtiH = std::make_pair(NULL, NULL);
+    mappedHeight = NULL;
 }
 
 std::string Adjacent::toString() const {
@@ -17,7 +17,7 @@ std::string Adjacent::toString() const {
            ")-> Mapped Height = " + std::to_string(mappedHeight);
 }
 
-void Adjacent::setCoord(std::pair<double, double> coord) {
+void Adjacent::setCoord(std::pair<int, double> coord) {
     otherCoord = coord;
 }
 
@@ -33,6 +33,6 @@ void Adjacent::setAltiH(std::pair<int, double> height) {
     basealtiH = height;
 }
 
-void Adjacent::setMapHeight(double height) {
+void Adjacent::setMapHeight(std::pair<double, double, double> height) {
     mappedHeight = height;
 }

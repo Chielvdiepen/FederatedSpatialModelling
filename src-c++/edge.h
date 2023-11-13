@@ -6,24 +6,25 @@
 #include <string>
 #include "node.h"
 
+typedef uint8_t stone_id_t;
+
 class Edge {
-
 public:
-    Edge(Node src, Node dst, double rssi);
-    std::pair<int, int> id;
-    Node src;
-    Node dst;
-    double rssi;
-    double dist;
-    
-    std::string toString() const;
-    friend std::ostream &operator << (std::ostream &os, const Edge &edge);
-    bool operator==(const Edge &other) const;
-    size_t hash() const;
-    bool compare(const Edge &other) const;
+	Edge(stone_id_t source, stone_id_t target, int8_t rssi) : source(source), target(target), rssi(rssi) {}
 
-private:
-    // No private members    
+	stone_id_t source;
+	stone_id_t target;
+	int8_t rssi;
+	float distance; // TODO: add conversion distance from rssi
+
+	/**
+	 * @brief Compare two edges.
+	 * 
+	 * @param other 
+	 * @return true 
+	 * @return false 
+	 */
+	bool compare(const Edge &other) const;
 };
 
 #endif // EDGE_H

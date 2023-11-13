@@ -6,37 +6,86 @@
 
 #define _USE_MATH_DEFINES
 #include <cmath>
-#include <vector>
-#include <string>
-#include <algorithm>
-#include <sstream>
 
+/**
+ * @brief Triangle class
+ * 
+ */
 class Triangle {
-
 public:
-    Triangle(Edge edge1, Edge edge2, Edge edge3);
-    std::vector<Edge> edges;
-    double area;
-    std::vector<Node> nodes;
-    std::vector<int> unique;
-    std::string ID;
-    double contribution;
-    std::pair<int, double> angle;
-    std::pair<int, double> altitudeH;
-    std::vector<std::pair<int, double>> altitudeX;
-    
-    std::string toString() const;
-    
-    bool operator==(const Triangle &other) const;
-    bool hasEdge(Edge edgeToCheck) const;
-    Node getLastNode(Edge baseEdge) const;
-    Edge getOtherBaseEdge(Edge baseEdge) const;
+	static constexpr uint8_t NUM_EDGES = 3;
 
-private:
-    std::pair<int, double> getAngle() const;
-    double getArea() const;
-    std::pair<int, double> getAltitudeH() const;
-    std::vector<std::pair<int, double>> getAltitudeX() const;
+	/**
+	 * @brief Construct a new Triangle object of three edge pointers
+	 * 
+	 * @param adj_edge1 
+	 * @param adj_edge2 
+	 * @param opposite_edge 
+	 */
+	Triangle(Edge *adj_edge1, Edge *adj_edge2, Edge *opposite_edge) : edges{*adj_edge1, *adj_edge2, *opposite_edge} {}
+    // OR
+	Triangle(Edge *base_edge, Edge *adj_edge, Edge *opposite_edge) : base_edge(base_edge), adj_edge(adj_edge), opposite_edge(opposite_edge) {}
+	
+	/**
+	 * Edges that make up the triangle.
+	 */
+	Edge edges[NUM_EDGES];
+	// OR
+	Edge *base_edge;
+	Edge *adj_edge;
+	Edge *opposite_edge;
+
+	// TODO: add triangle id, needed?
+
+	/**
+	 * Gets the area of the triangle.
+	 */
+	float getArea();
+
+	/**
+	 * Get the angle to the triangle w.r.t. the current crownstone.
+	 */
+	float getAngle();
+
+	/**
+	 * Get the altitude of the triangle.
+	 */
+	float getAltitude();
+
+	/**
+	 * @brief Get the Alitude Base Position of the Altitude's x position to the target crownstone.
+	 * 
+	 * @param target 
+	 * @return float 
+	 */
+	float getAlitudeBasePositionTo(stone_id_t targetID);
+
+	/**
+	 * @brief Returns the third node of the triangle based on the base edge.
+	 * Base edge is alway self->otherNode
+	 * 
+	 * @param baseEdge 
+	 * @return stone_id_t 
+	 */
+	stone_id_t getThirdNode(Edge& baseEdge); 
+
+	/**
+	 * @brief Get the Other outgoing base edge
+	 * 
+	 * @param baseEdge 
+	 * @return Edge pointer 
+	 */
+	Edge* getOtherBase(Edge& baseEdge);
+
+	/**
+	 * @brief Get a specific edge from the triangle.
+	 * 
+	 * @param source 
+	 * @param target 
+	 * @return Edge pointer
+	 */
+	Edge* getEdge(stone_id_t source, stone_id_t target);
+	
 };
 
-#endif
+#endif // TRIANGLE_H
