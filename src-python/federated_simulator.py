@@ -1,6 +1,7 @@
 import random
 from node import Node
 from edge import Edge
+from config import TAGCOORD
 import threading
 import matplotlib.pyplot as plt
 import networkx as nx
@@ -104,27 +105,33 @@ def initialize_nodes(RefNodeCoords, num_nodes, office_width, office_length, offi
 
 def create_edges(nodeList, RefNodeCoords, RSSI, PLOT):
     NetworkEdges = {}
+    TagDistance = {}
     for i in range(len(nodeList)):
         table = []
         for j in range(len(nodeList)):
             if nodeList[i] != nodeList[j]:
                 table.append(Edge(nodeList[i], nodeList[j], distance_to_rssi(RefNodeCoords[i],RefNodeCoords[j])))
         table = sorted(table, key=lambda x: x.rssi, reverse=RSSI) # if rssi set True
+        TagDistance.update({nodeList[i].uuid : distance_to_rssi(RefNodeCoords[i],TAGCOORD)})
         NetworkEdges[nodeList[i].uuid] = table
 
     print('Reference Network Edges:')
     for key, edges in NetworkEdges.items():
         print(f'Node {key}:= Edges{edges}')
+    print()
+    print('Reference Tag distances:')
+    for key, distance in TagDistance.items():
+        print(f'Node {key}: Distance= {distance}')
 
     if PLOT:
         compareGraph3D(NetworkEdges,RefNodeCoords)
     
-    return NetworkEdges
+    return NetworkEdges, TagDistance
 
-def run_simulation(nodeList, NetworkEdges):
+def run_simulation(nodeList, NetworkEdges, TagDistance):
     thread_list = []
     for i in range(len(nodeList)):
-        thread = threading.Thread(target=nodeList[i].main, args=(NetworkEdges, ))
+        thread = threading.Thread(target=nodeList[i].main, args=(NetworkEdges,TagDistance, ))
         thread_list.append(thread)
         thread.start()
 

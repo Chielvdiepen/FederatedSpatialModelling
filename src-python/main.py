@@ -4,8 +4,8 @@ from config import office_width, office_length, office_height, num_nodes, RefNod
 if __name__ == "__main__":
 
     nodeList = initialize_nodes(RefNodeCoords, num_nodes, office_width, office_length, office_height)
-    NetworkEdges = create_edges(nodeList, RefNodeCoords, RSSI, PLOT)
-    run_simulation(nodeList, NetworkEdges)
+    NetworkEdges, TagDistances = create_edges(nodeList, RefNodeCoords, RSSI, PLOT)
+    run_simulation(nodeList, NetworkEdges, TagDistances)
 
     nodeA = nodeList[0]
 

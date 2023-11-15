@@ -18,6 +18,12 @@ RefNodeCoords = [(0,0,0),(4,0,0),(3.5,2,0),(1.5,3,2),(3,3,3)] # Tetraeder + extr
 # RefNodeCoords = [(7,3,0),(0,0,0),(4,0,0)] # Simple Triangle
 
 DIM2D = False
+
+if DIM2D:
+    TAGCOORD = (1,1,0)
+else:
+    TAGCOORD = (1,1,1)
+
 MAXTRIANGLES = 25
 RSSI = False
 PLOT = False

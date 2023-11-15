@@ -1,6 +1,7 @@
 from edge import Edge
 from triangle import Triangle
 from adjacent import Adjacent
+from tetrahedon import Tetrahedon
 import numpy as np
 from math import sqrt
 import copy
@@ -24,6 +25,9 @@ class Node:
         self.mapEdgeSetDict = {}
         self.mappingDict = {}
         self.transCoordsDict = {}
+
+        self.tetrahedonList = []
+        self.tagDistance = 0
    
     def __repr__(self):
         return str(self)
@@ -77,8 +81,9 @@ class Node:
         return self.uuid == other.uuid
     
     # Initial scan for surrounding nodes in the environment 
-    def scanSurroundings(self, network_edges):
+    def scanSurroundings(self, network_edges, tag_distances):
         surNodeSet = set()
+        self.tagDistance = tag_distances[self.uuid]
         for edge in network_edges[self.uuid]:
             surNodeSet.add((edge.dst,edge.rssi))
         self.SurNodes = sorted(surNodeSet, key=lambda x: x[1], reverse=RSSI)
@@ -301,7 +306,7 @@ class Node:
             adj_base = self.adjDictSearch(baseEdge, baseNode.uuid)
             angle = self.getMapAngle(baseNode,thirdNode,adj_base.basealtiX[1],adj.basealtiX[1],adj_base.basealtiH[1],adj.basealtiH[1])
             mapped = np.dot(roll(angle), coord)
-            return (mapped[0],mapped[1],mapped[2]), angle
+            return (mapped[0],mapped[1],mapped[2]), angle, adj
 
     # Iterates on the adjacent triangles, set the first on XY/default and calculate for the following triangles the angle between default, altiX, altiH 
     def mapAdjacents(self):
@@ -366,8 +371,11 @@ class Node:
                     continue
 
                 otherBaseEdge = baseTriangle.getOtherBaseEdge(base_edge)
-                mapped, angle = self.adjMapHelper(otherBaseEdge, base_edge.dst, thirdNode)
+                mapped, angle, adj_other = self.adjMapHelper(otherBaseEdge, base_edge.dst, thirdNode)
                 rotation_matrix = np.dot(roll(angle), rotation_matrix)
+
+                self.tetrahedonList.append(Tetrahedon(baseTriangle,adj.triangle,adj_other.triangle))
+
                 # yaw + roll
                 if round(mapped[0],3) == round(adj.mappedHeight[0],3) and round(mapped[1],3) == round(adj.mappedHeight[1],3) and round(mapped[2],3) == round(adj.mappedHeight[2],3):
                     mapCoords.update({thirdNode.uuid:(mapped[0],mapped[1],mapped[2])})
@@ -442,22 +450,67 @@ class Node:
                 # else:
                 #     mapCoord.update({uuid:(0,0,0)})
 
+    def getTagDistance(self):
+        return self.tagDistance
+
+    def requestTagDistance(self, target_Node):
+        # send BLE message to target and wait for response
+        return target_Node.getTagDistance()
+
+    def triangleLocalisation(self):
+        tagRSSI = self.getTagDistance()
+
+        # request tag distance of other nodes in triangle
+        for adj in self.adjTrianglesDict[self.adjEdgeList[0]]:
+            nodeRSSI1 = self.requestTagDistance(adj.triangle.nodes[1])
+            nodeRSSI2 = self.requestTagDistance(adj.triangle.nodes[2])
+            otherRSSI1 = self.nodeSearch(adj.triangle.nodes[1])[1]
+            otherRSSI2 = self.nodeSearch(adj.triangle.nodes[2])[1]  
+            print(f"({self.uuid})=Triangle={tagRSSI}::{otherRSSI1}::{otherRSSI2}::{nodeRSSI1}::{nodeRSSI2}")
+            
+            # calculate the x,y,z position of the tag with a neural network: self.neuralNetwork(tagRSSI, otherRSSI1, otherRSSI2, nodeRSSI1, nodeRSSI2)
+            # OR
+            # calculate the x,y,z position of the tag with a trilateration algorithm
+
+    def tetrahedonLocalisation(self):
+        tagRSSI = self.getTagDistance()
+
+        # request tag distance of other nodes in triangle
+        for tetra in self.tetrahedonList:
+            nodeRSSI1 = self.requestTagDistance(tetra.nodes[1])
+            nodeRSSI2 = self.requestTagDistance(tetra.nodes[2])
+            nodeRSSI3 = self.requestTagDistance(tetra.nodes[3])
+
+            print(tetra.nodes[0].uuid, tetra.nodes[1].uuid, tetra.nodes[2].uuid, tetra.nodes[3].uuid)
+
+            otherRSSI1 = self.nodeSearch(tetra.nodes[1])[1]
+            otherRSSI2 = self.nodeSearch(tetra.nodes[2])[1]
+            otherRSSI3 = self.nodeSearch(tetra.nodes[3])[1]    
+            print(f"({self.uuid})=Tetra={tagRSSI}::{otherRSSI1}::{otherRSSI2}::{otherRSSI3}::{nodeRSSI1}::{nodeRSSI2}::{nodeRSSI3}")
+            
+            # calculate the x,y,z position of the tag with a neural network: self.neuralNetwork(tagRSSI, otherRSSI1, otherRSSI2, nodeRSSI1, nodeRSSI2)
+            # OR
+            # calculate the x,y,z position of the tag with a trilateration algorithm
+
 
     # init function, scan surroundings, make triangles
-    def init(self, network_edges):
-        self.scanSurroundings(network_edges)
+    def init(self, network_edges, tag_distances):
+        self.scanSurroundings(network_edges, tag_distances)
         time.sleep(5)
         self.triangleProcedure()
         time.sleep(5)
 
     # main function, calls init first, for getting edges amd triangles, after: create adj triangles, map adjacents, make map, rotate coords, print node info
-    def main(self, network_edges):
-        self.init(network_edges)
+    def main(self, network_edges, tag_distances):
+        self.init(network_edges, tag_distances)
+        # creating and mapping adjacents is one procedure 
         self.createAdjTriangles()
         self.mapAdjacents()
         time.sleep(5)
         self.makeMap()
         time.sleep(7)
         self.rotateCoords()
-        # time.sleep(7)
+        time.sleep(7)
+        # self.triangleLocalisation()
+        self.tetrahedonLocalisation()
         # self.printNodeInfo()
